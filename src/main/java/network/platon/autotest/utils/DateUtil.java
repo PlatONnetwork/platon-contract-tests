@@ -100,9 +100,6 @@ public class DateUtil {
 
 	/**
 	 * get GMT Time
-	 * 
-	 * @param calendar
-	 * @return
 	 */
 	public Date getGmtDate(Long time) {
 		Calendar calendar = Calendar.getInstance();

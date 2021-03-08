@@ -11,8 +11,6 @@ import java.text.NumberFormat;
 public class DataUtil {
 	/**
 	 * 四舍五入，并保留多少位小数
-	 * @param v 参数为double类型
-	 * @param scale
 	 * @return 返回值为String类型
 	 */
 	public static String round(double value, Integer max) {
@@ -27,8 +25,6 @@ public class DataUtil {
 	}
 	/**
 	 * 四舍五入，并保留多少位小数
-	 * @param v 参数为String类型
-	 * @param scale
 	 * @return 返回值为String类型
 	 */
 	public static String round(String value, Integer max) {
@@ -36,8 +32,6 @@ public class DataUtil {
 	}
 	/**
 	 * 四舍五入，并保留多少位小数
-	 * @param v 参数为double类型
-	 * @param scale
 	 * @return 返回值为Double类型
 	 */
 	public static Double round(double value, int max) {
@@ -45,8 +39,6 @@ public class DataUtil {
 	}
 	/**
 	 * 四舍五入，并保留多少位小数
-	 * @param v 参数为String类型
-	 * @param scale
 	 * @return 返回值为Double类型
 	 */
 	public static Double round(String value, int max) {
