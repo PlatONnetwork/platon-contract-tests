@@ -20,7 +20,7 @@ import java.util.Date;
 public class NewSecPledgeApplyManagerTest extends ContractPrepareTest {
 
 
-//    //模拟简单的业务数据
+    //模拟简单的业务数据
     private String secApply = "2-businessNo1-bizId1-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24";
 
     //对应 secApply以“-”分隔的第一个值

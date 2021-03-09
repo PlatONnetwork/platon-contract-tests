@@ -1,6 +1,7 @@
 package network.platon.test.evm.beforetest;
 
 import com.platon.crypto.Credentials;
+import com.platon.parameters.NetworkParameters;
 import com.platon.protocol.Web3j;
 import com.platon.tx.RawTransactionManager;
 import com.platon.tx.gas.ContractGasProvider;
@@ -22,7 +23,7 @@ public class ContractPrepareTest extends BaseTest {
     protected ContractGasProvider provider;
     protected String walletAddress;
     protected String gasLimit = "4712388";
-    protected String gasPrice = "3000000000000000";
+    protected String gasPrice = "4000000000000000";
 
     /**
      * 合约部署相关准备工作
@@ -31,7 +32,9 @@ public class ContractPrepareTest extends BaseTest {
      */
     protected void prepare(String gasPrice,String gasLimit){
         chainId = Integer.valueOf(driverService.param.get("chainId"));
+        String hrp =  driverService.param.get("hrp");
         try {
+            NetworkParameters.init(chainId, hrp);
             web3j = Web3j.build(new HttpService(driverService.param.get("nodeUrl")));
             credentials = Credentials.create(driverService.param.get("privateKey"));
             collector.logStepPass("currentBlockNumber:" + web3j.platonBlockNumber().send().getBlockNumber());

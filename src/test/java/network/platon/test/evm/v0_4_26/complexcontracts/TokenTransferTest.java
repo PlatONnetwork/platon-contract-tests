@@ -1,18 +1,13 @@
 package network.platon.test.evm.v0_4_26.complexcontracts;
 
-import com.platon.crypto.Credentials;
-import com.platon.protocol.Web3j;
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import com.platon.protocol.http.HttpService;
 import com.platon.tx.RawTransactionManager;
 import com.platon.tx.gas.ContractGasProvider;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
-import network.platon.autotest.junit.rules.AssertCollector;
-import network.platon.autotest.junit.rules.DriverService;
 import network.platon.contracts.evm.v0_4_26.HumanStandardToken;
+import network.platon.test.evm.beforetest.ContractPrepareTest;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
 import java.math.BigInteger;
@@ -24,22 +19,13 @@ import java.math.BigInteger;
  * @author: qcxiao
  * @create: 2019/12/16 13:39
  **/
-public class TokenTransferTest {
+public class TokenTransferTest extends ContractPrepareTest {
 
-    @Rule
-    public DriverService driverService = new DriverService();
-
-    @Rule
-    public AssertCollector collector = new AssertCollector();
-
-    // 底层链ID
-    private long chainId;
     // 每次转移的代币数量
     private String transferAmount;
     // 发行代币的总额
     private String ownerAmount;
     // 接收代币的地址
-//    private final static String transferTo = "lax1354ckckjla0869lernuzrjh7arslu3vypxek6h";
     private final static String transferTo = "atx1354ckckjla0869lernuzrjh7arslu3vyanptca";
     // 代币名称
     private String tokenName;
@@ -49,7 +35,7 @@ public class TokenTransferTest {
 
     @Before
     public void before() {
-        chainId = Integer.valueOf(driverService.param.get("chainId"));
+        this.prepare();
         ownerAmount = driverService.param.get("ownerAmount");
         transferAmount = driverService.param.get("transferAmount");
         tokenName = driverService.param.get("tokenName");
@@ -60,17 +46,6 @@ public class TokenTransferTest {
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
             author = "qcxiao", showName = "complexcontracts.TokenTransferTest-代币转移", sourcePrefix = "evm/0.4.26")
     public void testTransfer() {
-        Web3j web3j = null;
-        Credentials credentials = null;
-        try {
-            web3j = Web3j.build(new HttpService(driverService.param.get("nodeUrl")));
-            credentials = Credentials.create(driverService.param.get("privateKey"));
-            collector.logStepPass("currentBlockNumber:" + web3j.platonBlockNumber().send().getBlockNumber());
-        } catch (Exception e) {
-            collector.logStepFail("The node is unable to connect", e.toString());
-            e.printStackTrace();
-        }
-
 
         ContractGasProvider provider = new ContractGasProvider(new BigInteger("5000000000000"), new BigInteger("3000000"));
         RawTransactionManager transactionManager = new RawTransactionManager(web3j, credentials);
