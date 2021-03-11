@@ -79,14 +79,10 @@ CONTRACT Bank: public platon::Contract, public Ownable
 			magnitude.self() = (18_LAT).Get();			// 2**64
 			stakingRequirement.self() = (50_LAT).Get(); 	// 50e18
 
-			// 
-			//dev.self() = Address("0x493301712671Ada506ba6Ca7891F436D29185823"); // setting.
-//			auto address_info = make_address("lax10jc0t4ndqarj4q6ujl3g3ycmufgc77epxg02lt");
-			auto address_info = make_address("atx10jc0t4ndqarj4q6ujl3g3ycmufgc77ep6ahhap");
+			auto address_info = make_address("lax10jc0t4ndqarj4q6ujl3g3ycmufgc77epxg02lt");
             if(address_info.second) dev.self() = address_info.first;
 
-//            auto address_init = make_address("laxqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-            auto address_init = make_address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc");
+            auto address_init = make_address("laxqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
             if(address_init.second) Address initaddr = address_init.first;
 		}
 

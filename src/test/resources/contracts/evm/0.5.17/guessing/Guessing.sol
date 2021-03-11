@@ -10,8 +10,7 @@ contract Guessing {
     uint256 public endBlock; //竞猜截止块高
     bytes32 public block_hash;//竞猜截止块高的块hash
     bool public guessingClosed = false; //竞猜是否已开奖
-//    uint256 public baseUnit = 5 lat; //最小转金额
-    uint256 public baseUnit = 5 atp; //最小转金额
+    uint256 public baseUnit = 5 lat; //最小转金额
 
     uint256 public balance; //竞猜奖池总金额
     uint256 public averageAmount; //每个中奖号码对应获奖金额
@@ -126,11 +125,7 @@ contract Guessing {
             for(uint256 j=0;j<winnerAddresses.length;j++){
                 //中奖者中奖票号统计
                 winnerMap[winnerAddresses[j]] = winnerMap[winnerAddresses[j]]+1;
-//                if(winnerAddresses[j] != address("lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq542u6a") || winnerAddresses[j] != address("lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmscn5j")){
-//                    tempAddress = address(uint160(winnerAddresses[j]));
-//                    tempAddress.transfer(averageAmount);
-//                }
-                if(winnerAddresses[j] != address("atp1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqdruy9j") || winnerAddresses[j] != address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc")){
+                if(winnerAddresses[j] != address("lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq542u6a") || winnerAddresses[j] != address("lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmscn5j")){
                     tempAddress = address(uint160(winnerAddresses[j]));
                     tempAddress.transfer(averageAmount);
                 }

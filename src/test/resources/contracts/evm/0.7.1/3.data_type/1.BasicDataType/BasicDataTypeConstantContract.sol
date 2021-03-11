@@ -59,8 +59,7 @@ contract BasicDataTypeConstantContract {
      */
     function getAddress() public returns (address v) {
 
-//        address b = address("lax1w2kjkufl4g2v93xd94a0lewc75ufdr66rnzuw2");
-        address b = address("atx1w2kjkufl4g2v93xd94a0lewc75ufdr66lx6pvq");
+        address b = address("lax1w2kjkufl4g2v93xd94a0lewc75ufdr66rnzuw2");
         return b;
     }
 

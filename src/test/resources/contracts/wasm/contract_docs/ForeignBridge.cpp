@@ -89,8 +89,7 @@ class ForeignBridge: public platon::Contract, public BridgeDeploymentAddressStor
 
 	        homeGasPrice.self() = u128(1000000000);
 
-//	        auto address_init = make_address("laxqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-	        auto address_init = make_address("atx1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq89qwkc");
+	        auto address_init = make_address("laxqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
             if(address_init.second) Address initaddr = address_init.first;
 	    }
 
