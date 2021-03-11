@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.data_type.TypeConversion;
+package network.platon.test.evm.v0_7_6.data_type.TypeConversion;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.tuples.generated.Tuple2;
-import network.platon.contracts.evm.v0_7_1.TypeConversionContract;
+import network.platon.contracts.evm.v0_7_6.TypeConversionContract;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -26,7 +26,7 @@ public class TypeConversionContractTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "TypeConversionContract.基本类型转换",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "TypeConversionContract.基本类型转换",sourcePrefix = "evm/0.7.6")
     public void testTypeConversionContract() {
 
         TypeConversionContract typeConversionContractTest = null;

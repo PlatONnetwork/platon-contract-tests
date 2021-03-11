@@ -1,4 +1,4 @@
-package network.platon.test.evm.v0_7_1.regreetest;//package network.platon.test.evm.regreetest;
+package network.platon.test.evm.v0_7_6.regreetest;//package network.platon.test.evm.regreetest;
 //
 //import com.alibaba.fastjson.JSONArray;
 //import network.platon.autotest.junit.annotations.DataSource;

@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.complexcontracts;
+package network.platon.test.evm.v0_7_6.complexcontracts;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.AtomicSwap;
+import network.platon.contracts.evm.v0_7_6.AtomicSwap;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -21,7 +21,7 @@ public class AtomicSwapTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "qcxiao", showName = "complexcontracts.AtomicSwapTest", sourcePrefix = "evm/0.7.1")
+            author = "qcxiao", showName = "complexcontracts.AtomicSwapTest", sourcePrefix = "evm/0.7.6")
     public void test() {
         try {
             AtomicSwap atomicSwap = AtomicSwap.deploy(web3j, transactionManager, provider).send();

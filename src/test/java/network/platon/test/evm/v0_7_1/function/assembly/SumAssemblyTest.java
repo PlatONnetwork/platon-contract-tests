@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.function.assembly;
+package network.platon.test.evm.v0_7_6.function.assembly;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.SumAssembly;
+import network.platon.contracts.evm.v0_7_6.SumAssembly;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -30,7 +30,7 @@ public class SumAssemblyTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.SumAssemblyTest-汇编操作指令测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.SumAssemblyTest-汇编操作指令测试", sourcePrefix = "evm/0.7.6")
     public void Sumassembly() {
         try {
             SumAssembly sumassembly = SumAssembly.deploy(web3j, transactionManager, provider).send();

@@ -1,4 +1,4 @@
-package network.platon.test.evm.v0_7_1.regreetest;
+package network.platon.test.evm.v0_7_6.regreetest;
 
 import com.platon.bech32.Bech32;
 import com.platon.crypto.Credentials;
@@ -61,7 +61,7 @@ public class PlatONTransferTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "qcxiao", showName = "network.platon.test.evm.PlatonTransferTest-普通有回执转账交易", sourcePrefix = "evm/0.7.1")
+            author = "qcxiao", showName = "network.platon.test.evm.PlatonTransferTest-普通有回执转账交易", sourcePrefix = "evm/0.7.6")
     public void testTransfer() {
         Credentials credentials = null;
         BigInteger nonce = null;

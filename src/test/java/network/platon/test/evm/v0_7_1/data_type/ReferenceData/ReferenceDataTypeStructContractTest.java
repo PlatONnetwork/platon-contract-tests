@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.data_type.ReferenceData;
+package network.platon.test.evm.v0_7_6.data_type.ReferenceData;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.tuples.generated.Tuple4;
-import network.platon.contracts.evm.v0_7_1.ReferenceDataTypeStructContract;
+import network.platon.contracts.evm.v0_7_6.ReferenceDataTypeStructContract;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -25,7 +25,7 @@ public class ReferenceDataTypeStructContractTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "ReferenceDataTypeStructContractTest.结构体定义、赋值及取值",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "ReferenceDataTypeStructContractTest.结构体定义、赋值及取值",sourcePrefix = "evm/0.7.6")
     public void testReferenceDataTypeStructTest() {
 
         ReferenceDataTypeStructContract referenceDataTypeStructContract = null;

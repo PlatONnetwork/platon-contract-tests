@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.oop.Interface;
+package network.platon.test.evm.v0_7_6.oop.Interface;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InterfaceContractParentTest;
+import network.platon.contracts.evm.v0_7_6.InterfaceContractParentTest;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -28,7 +28,7 @@ public class InterfaceContractALimitTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InterfaceContract.接口的函数只能声明外部类型",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InterfaceContract.接口的函数只能声明外部类型",sourcePrefix = "evm/0.7.6")
     public void testInterfaceContractLimit() {
 
         InterfaceContractParentTest interfaceContractParentTest= null;

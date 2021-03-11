@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.exceptionhandle;
+package network.platon.test.evm.v0_7_6.exceptionhandle;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.protocol.exceptions.TransactionException;
-import network.platon.contracts.evm.v0_7_1.RequireMessageHandle;
+import network.platon.contracts.evm.v0_7_6.RequireMessageHandle;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -19,7 +19,7 @@ import java.math.BigInteger;
 public class RequireMessageHandleTest extends ContractPrepareTest {
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "albedo", showName = "exceptionhandle.RequireMessageHandle-require(bool condition, string message)函数", sourcePrefix = "evm/0.7.1")
+            author = "albedo", showName = "exceptionhandle.RequireMessageHandle-require(bool condition, string message)函数", sourcePrefix = "evm/0.7.6")
     public void testParamException() {
         try {
             prepare();

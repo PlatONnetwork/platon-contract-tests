@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.evm_assembly_contract_call;
+package network.platon.test.evm.v0_7_6.evm_assembly_contract_call;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.Precompiled;
+import network.platon.contracts.evm.v0_7_6.Precompiled;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -28,7 +28,7 @@ public class PrecompiledTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "hudenian", showName = "evm_assembly_contract_call.AssemblyAddTest-evm合约调用系统合约", sourcePrefix = "evm/0.7.1")
+            author = "hudenian", showName = "evm_assembly_contract_call.AssemblyAddTest-evm合约调用系统合约", sourcePrefix = "evm/0.7.6")
     public void precompiledTest() {
         try {
             Precompiled precompiled = Precompiled.deploy(web3j, transactionManager, provider).send();

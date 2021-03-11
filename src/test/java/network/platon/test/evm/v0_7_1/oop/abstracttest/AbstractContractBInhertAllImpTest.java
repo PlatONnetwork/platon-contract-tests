@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.oop.abstracttest;
+package network.platon.test.evm.v0_7_6.oop.abstracttest;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.AbstractContractBSubclass;
+import network.platon.contracts.evm.v0_7_6.AbstractContractBSubclass;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -25,7 +25,7 @@ public class AbstractContractBInhertAllImpTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "AbstractContract.抽象合约单继承且实现执行情况",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "AbstractContract.抽象合约单继承且实现执行情况",sourcePrefix = "evm/0.7.6")
     public void testAbstractContract() {
 
         AbstractContractBSubclass abstractContractBSubclass= null;

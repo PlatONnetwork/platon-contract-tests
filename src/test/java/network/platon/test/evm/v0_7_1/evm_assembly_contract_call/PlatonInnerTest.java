@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.evm_assembly_contract_call;
+package network.platon.test.evm.v0_7_6.evm_assembly_contract_call;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.PlatonInner;
+import network.platon.contracts.evm.v0_7_6.PlatonInner;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -49,7 +49,7 @@ public class PlatonInnerTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "hudenian", showName = "evm_assembly_contract_call.PlatonInnerTest-evm合约调用PPOS合约", sourcePrefix = "evm/0.7.1")
+            author = "hudenian", showName = "evm_assembly_contract_call.PlatonInnerTest-evm合约调用PPOS合约", sourcePrefix = "evm/0.7.6")
     public void platonInner() {
         try {
             PlatonInner platonInner = PlatonInner.deploy(web3j, transactionManager, provider).send();

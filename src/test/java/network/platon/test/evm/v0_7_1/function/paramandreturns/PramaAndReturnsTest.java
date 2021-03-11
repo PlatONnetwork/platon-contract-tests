@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.function.paramandreturns;
+package network.platon.test.evm.v0_7_6.function.paramandreturns;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.tuples.generated.Tuple2;
-import network.platon.contracts.evm.v0_7_1.PramaAndReturns;
+import network.platon.contracts.evm.v0_7_6.PramaAndReturns;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -36,7 +36,7 @@ public class PramaAndReturnsTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.PramaAndReturnsTest-参数和返回类型测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.PramaAndReturnsTest-参数和返回类型测试", sourcePrefix = "evm/0.7.6")
     public void ParamAndReturn() {
         try {
 

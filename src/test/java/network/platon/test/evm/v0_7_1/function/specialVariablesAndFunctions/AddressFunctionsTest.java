@@ -1,9 +1,9 @@
-package network.platon.test.evm.v0_7_1.function.specialVariablesAndFunctions;
+package network.platon.test.evm.v0_7_6.function.specialVariablesAndFunctions;
 
 import com.platon.bech32.Bech32;
 import com.platon.parameters.NetworkParameters;
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.AddressFunctions;
+import network.platon.contracts.evm.v0_7_6.AddressFunctions;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -30,7 +30,7 @@ public class AddressFunctionsTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.AddressFunctionsTest-地址相关函数测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.AddressFunctionsTest-地址相关函数测试", sourcePrefix = "evm/0.7.6")
     public void Addressfunctions() {
         try {
             AddressFunctions addressfunctions = AddressFunctions.deploy(web3j, transactionManager, provider).send();

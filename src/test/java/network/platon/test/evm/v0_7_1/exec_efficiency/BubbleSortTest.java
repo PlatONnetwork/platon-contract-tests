@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.exec_efficiency;
+package network.platon.test.evm.v0_7_6.exec_efficiency;
 
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.BubbleSort;
+import network.platon.contracts.evm.v0_7_6.BubbleSort;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -31,7 +31,7 @@ public class BubbleSortTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "exec_efficiency.BubbleSortTest-冒泡排序", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "exec_efficiency.BubbleSortTest-冒泡排序", sourcePrefix = "evm/0.7.6")
     public void test() {
         prepare();
         try {

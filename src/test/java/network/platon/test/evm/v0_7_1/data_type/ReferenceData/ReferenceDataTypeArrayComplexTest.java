@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.data_type.ReferenceData;
+package network.platon.test.evm.v0_7_6.data_type.ReferenceData;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.ReferenceDataTypeArrayComplexContract;
+import network.platon.contracts.evm.v0_7_6.ReferenceDataTypeArrayComplexContract;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -36,7 +36,7 @@ public class ReferenceDataTypeArrayComplexTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "ReferenceDataTypeArrayComplex.含数组（Array）运算逻辑合约",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "ReferenceDataTypeArrayComplex.含数组（Array）运算逻辑合约",sourcePrefix = "evm/0.7.6")
     public void testReferenceDataTypeArrayTest() {
         try{
             ReferenceDataTypeArrayComplexContract referenceDataTypeArrayComplex = null;

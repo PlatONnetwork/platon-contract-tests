@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.oop.Interface;
+package network.platon.test.evm.v0_7_6.oop.Interface;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InterfaceContractInheritMultipleTest;
+import network.platon.contracts.evm.v0_7_6.InterfaceContractInheritMultipleTest;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -32,7 +32,7 @@ public class InterfaceContractInhertTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "AbstractContract.合约多继承接口执行情况",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "AbstractContract.合约多继承接口执行情况",sourcePrefix = "evm/0.7.6")
     public void testAbstractContract() {
 
         InterfaceContractInheritMultipleTest interfaceInheritMultiple = null;

@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.function.specialVariablesAndFunctions;
+package network.platon.test.evm.v0_7_6.function.specialVariablesAndFunctions;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.BlockTransactionPropertiesFunctions;
+import network.platon.contracts.evm.v0_7_6.BlockTransactionPropertiesFunctions;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -43,7 +43,7 @@ public class BlockTransactionPropertiesFunctionsTest extends ContractPrepareTest
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.BlockTransactionPropertiesFunctionsTest-区块和交易函数测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.BlockTransactionPropertiesFunctionsTest-区块和交易函数测试", sourcePrefix = "evm/0.7.6")
     public void BlockTransactionPropertiesfunction() {
         try {
             BlockTransactionPropertiesFunctions blockTransactionPropertiesFunctions = BlockTransactionPropertiesFunctions.deploy(web3j, transactionManager, provider).send();

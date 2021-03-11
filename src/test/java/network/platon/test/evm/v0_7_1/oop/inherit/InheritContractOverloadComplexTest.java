@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.oop.inherit;
+package network.platon.test.evm.v0_7_6.oop.inherit;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InheritContractOverloadChild;
+import network.platon.contracts.evm.v0_7_6.InheritContractOverloadChild;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -23,7 +23,7 @@ public class InheritContractOverloadComplexTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InheritContract.合约函数重载(Overload)复杂情况",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InheritContract.合约函数重载(Overload)复杂情况",sourcePrefix = "evm/0.7.6")
     public void testInheritContractMutipleTest1() {
 
         InheritContractOverloadChild inheritContractOverloadChild = null;

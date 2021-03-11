@@ -1,4 +1,4 @@
-package network.platon.test.evm.v0_7_1.oop.abstracttest;
+package network.platon.test.evm.v0_7_6.oop.abstracttest;
 
 import com.platon.crypto.Credentials;
 import com.platon.protocol.Web3j;
@@ -10,7 +10,7 @@ import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
 import network.platon.autotest.junit.rules.AssertCollector;
 import network.platon.autotest.junit.rules.DriverService;
-import network.platon.contracts.evm.v0_7_1.AbstractContractGrandpa;
+import network.platon.contracts.evm.v0_7_6.AbstractContractGrandpa;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class AbstractContractANoImpTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "AbstractContract.抽象合约未实现执行情况",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "AbstractContract.抽象合约未实现执行情况",sourcePrefix = "evm/0.7.6")
     public void testAbstractContract() {
         Web3j web3j = null;
         Credentials credentials = null;

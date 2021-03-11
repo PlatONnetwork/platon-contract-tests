@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.data_type.BasicDataType;
+package network.platon.test.evm.v0_7_6.data_type.BasicDataType;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.BasicDataTypeConstantContract;
+import network.platon.contracts.evm.v0_7_6.BasicDataTypeConstantContract;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -31,7 +31,7 @@ public class BasicDataTypeConstantAddressTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "BasicDataTypeConstantContractTest.合约地址Address常量",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "BasicDataTypeConstantContractTest.合约地址Address常量",sourcePrefix = "evm/0.7.6")
     public void testBasicDataTypeContract() {
 
         BasicDataTypeConstantContract basicDataTypeConstantContract = null;

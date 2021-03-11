@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.exceptionhandle;
+package network.platon.test.evm.v0_7_6.exceptionhandle;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.protocol.exceptions.TransactionException;
-import network.platon.contracts.evm.v0_7_1.RevertHandle;
+import network.platon.contracts.evm.v0_7_6.RevertHandle;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -21,7 +21,7 @@ import java.math.BigInteger;
 public class RevertHandleTest extends ContractPrepareTest {
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "revertCheck",
-            author = "albedo", showName = "exceptionhandle.RevertHandle-revert()函数", sourcePrefix = "evm/0.7.1")
+            author = "albedo", showName = "exceptionhandle.RevertHandle-revert()函数", sourcePrefix = "evm/0.7.6")
     public void testRevertCheck() {
         try {
             prepare();
@@ -45,7 +45,7 @@ public class RevertHandleTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "revertReasonCheck",
-            author = "albedo", showName = "exceptionhandle.RevertHandle-revert(string reason)函数", sourcePrefix = "evm/0.7.1")
+            author = "albedo", showName = "exceptionhandle.RevertHandle-revert(string reason)函数", sourcePrefix = "evm/0.7.6")
     public void testParamException() {
         try {
             prepare();

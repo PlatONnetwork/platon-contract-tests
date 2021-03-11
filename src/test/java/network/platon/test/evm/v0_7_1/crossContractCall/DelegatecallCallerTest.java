@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.crossContractCall;
+package network.platon.test.evm.v0_7_6.crossContractCall;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.DelegatecallCallee;
-import network.platon.contracts.evm.v0_7_1.DelegatecallCaller;
+import network.platon.contracts.evm.v0_7_6.DelegatecallCallee;
+import network.platon.contracts.evm.v0_7_6.DelegatecallCaller;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -26,7 +26,7 @@ public class DelegatecallCallerTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "hudenian", showName = "DelegatecallCallerTest-跨合约调用者", sourcePrefix = "evm/0.7.1")
+            author = "hudenian", showName = "DelegatecallCallerTest-跨合约调用者", sourcePrefix = "evm/0.7.6")
     public void crossContractCaller() {
         try {
             //调用者合约地址

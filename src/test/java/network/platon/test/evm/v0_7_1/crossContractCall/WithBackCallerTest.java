@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.crossContractCall;
+package network.platon.test.evm.v0_7_6.crossContractCall;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.WithBackCallee;
-import network.platon.contracts.evm.v0_7_1.WithBackCaller;
+import network.platon.contracts.evm.v0_7_6.WithBackCallee;
+import network.platon.contracts.evm.v0_7_6.WithBackCaller;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -34,7 +34,7 @@ public class WithBackCallerTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "hudenian", showName = "WithBackCallerTest-跨合约调用者对反回值进行编码与解码", sourcePrefix = "evm/0.7.1")
+            author = "hudenian", showName = "WithBackCallerTest-跨合约调用者对反回值进行编码与解码", sourcePrefix = "evm/0.7.6")
     public void crossContractCaller() {
         try {
             //调用者合约地址

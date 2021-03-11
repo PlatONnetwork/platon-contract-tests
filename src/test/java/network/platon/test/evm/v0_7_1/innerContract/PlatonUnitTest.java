@@ -1,4 +1,4 @@
-package network.platon.test.evm.v0_7_1.innerContract;//package network.platon.test.evm.innerContract;
+package network.platon.test.evm.v0_7_6.innerContract;//package network.platon.test.evm.innerContract;
 //
 //import network.platon.test.evm.beforetest.ContractPrepareTest;
 //import network.platon.autotest.junit.annotations.DataSource;

@@ -1,9 +1,9 @@
-package network.platon.test.evm.v0_7_1.function.specialVariablesAndFunctions;
+package network.platon.test.evm.v0_7_6.function.specialVariablesAndFunctions;
 
 import com.platon.bech32.Bech32;
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.parameters.NetworkParameters;
-import network.platon.contracts.evm.v0_7_1.MathAndCryptographicFunctions;
+import network.platon.contracts.evm.v0_7_6.MathAndCryptographicFunctions;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -42,7 +42,7 @@ public class MathAndCryptographicFunctionsTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.MathAndCryptographicFunctionsTest-数学和加密函数测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.MathAndCryptographicFunctionsTest-数学和加密函数测试", sourcePrefix = "evm/0.7.6")
     public void MathAndCryptographicfunction() {
         try {
             MathAndCryptographicFunctions mathAndCryptographicFunctions = MathAndCryptographicFunctions.deploy(web3j, transactionManager, provider).send();

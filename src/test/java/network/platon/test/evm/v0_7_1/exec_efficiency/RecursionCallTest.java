@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.exec_efficiency;
+package network.platon.test.evm.v0_7_6.exec_efficiency;
 
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.RecursionCall;
+import network.platon.contracts.evm.v0_7_6.RecursionCall;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -29,7 +29,7 @@ public class RecursionCallTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "qcxiao", showName = "exec_efficiency.RecursionCallTest-递归执行", sourcePrefix = "evm/0.7.1")
+            author = "qcxiao", showName = "exec_efficiency.RecursionCallTest-递归执行", sourcePrefix = "evm/0.7.6")
     public void test() {
         prepare();
         try {

@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.lib;
+package network.platon.test.evm.v0_7_6.lib;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.LibraryStaticUsing;
+import network.platon.contracts.evm.v0_7_6.LibraryStaticUsing;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -21,7 +21,7 @@ import java.util.List;
 public class LibraryStaticUsingTest extends ContractPrepareTest {
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "emitEvent",
-            author = "albedo", showName = "lib.LibraryStaticUsingTest-类static方式引用", sourcePrefix = "evm/0.7.1")
+            author = "albedo", showName = "lib.LibraryStaticUsingTest-类static方式引用", sourcePrefix = "evm/0.7.6")
     public void testEmitEvent() {
         try {
             prepare();

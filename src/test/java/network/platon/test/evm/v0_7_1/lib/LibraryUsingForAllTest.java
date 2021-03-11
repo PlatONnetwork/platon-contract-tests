@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.lib;
+package network.platon.test.evm.v0_7_6.lib;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.LibraryUsingForAll;
+import network.platon.contracts.evm.v0_7_6.LibraryUsingForAll;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -18,7 +18,7 @@ import java.math.BigInteger;
 public class LibraryUsingForAllTest extends ContractPrepareTest {
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "albedo", showName = "lib.LibraryUsingForAllTest-using A for all type", sourcePrefix = "evm/0.7.1")
+            author = "albedo", showName = "lib.LibraryUsingForAllTest-using A for all type", sourcePrefix = "evm/0.7.6")
     public void testReplace() {
         try {
             prepare();

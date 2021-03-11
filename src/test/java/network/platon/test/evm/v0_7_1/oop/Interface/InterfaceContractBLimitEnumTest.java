@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.oop.Interface;
+package network.platon.test.evm.v0_7_6.oop.Interface;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InterfaceContractEnumTest;
+import network.platon.contracts.evm.v0_7_6.InterfaceContractEnumTest;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -23,7 +23,7 @@ public class InterfaceContractBLimitEnumTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InterfaceContractLimitEnum.验证接口中定义枚举",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InterfaceContractLimitEnum.验证接口中定义枚举",sourcePrefix = "evm/0.7.6")
     public void testInterfaceContractLimitEnum() {
 
         InterfaceContractEnumTest interfaceContractEnumTest= null;

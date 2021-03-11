@@ -1,9 +1,9 @@
-package network.platon.test.evm.v0_7_1.crossContractCall;
+package network.platon.test.evm.v0_7_6.crossContractCall;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.CallerOne;
-import network.platon.contracts.evm.v0_7_1.CallerThree;
-import network.platon.contracts.evm.v0_7_1.CallerTwo;
+import network.platon.contracts.evm.v0_7_6.CallerOne;
+import network.platon.contracts.evm.v0_7_6.CallerThree;
+import network.platon.contracts.evm.v0_7_6.CallerTwo;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -27,7 +27,7 @@ public class ThreeContractCallTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "hudenian", showName = "ThreeContractCallTest-三个合约间跨合约调用者", sourcePrefix = "evm/0.7.1")
+            author = "hudenian", showName = "ThreeContractCallTest-三个合约间跨合约调用者", sourcePrefix = "evm/0.7.6")
     public void threeContractCaller() {
         try {
             //第一个合约

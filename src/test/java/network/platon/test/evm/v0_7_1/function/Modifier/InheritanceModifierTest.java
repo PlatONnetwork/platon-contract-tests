@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.function.Modifier;
+package network.platon.test.evm.v0_7_6.function.Modifier;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InheritanceModifier;
+import network.platon.contracts.evm.v0_7_6.InheritanceModifier;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -29,7 +29,7 @@ public class InheritanceModifierTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.InheritanceModifierTest-单修饰器函数测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.InheritanceModifierTest-单修饰器函数测试", sourcePrefix = "evm/0.7.6")
     public void inheritancemodifier() {
         try {
             InheritanceModifier inheritanceModifier = InheritanceModifier.deploy(web3j, transactionManager, provider).send();

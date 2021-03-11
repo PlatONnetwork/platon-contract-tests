@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.oop.inherit;
+package network.platon.test.evm.v0_7_6.oop.inherit;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InheritContractASub;
-import network.platon.contracts.evm.v0_7_1.InheritContractBSub;
+import network.platon.contracts.evm.v0_7_6.InheritContractASub;
+import network.platon.contracts.evm.v0_7_6.InheritContractBSub;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -24,7 +24,7 @@ public class InheritContractPassParamTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InheritContract.合约继承支持传参",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InheritContract.合约继承支持传参",sourcePrefix = "evm/0.7.6")
     public void testInheritContractMutipleTest1() {
 
         InheritContractASub inheritContractSub1 = null;

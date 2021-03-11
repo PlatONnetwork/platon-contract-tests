@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.createcontract;
+package network.platon.test.evm.v0_7_6.createcontract;
 
 import com.platon.tuples.generated.Tuple2;
-import network.platon.contracts.evm.v0_7_1.CreateContract;
+import network.platon.contracts.evm.v0_7_6.CreateContract;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -18,7 +18,7 @@ import java.math.BigInteger;
 public class CreateContractTest extends ContractPrepareTest {
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "albedo", showName = "createcontract.CreateContractTest-new创建合约", sourcePrefix = "evm/0.7.1")
+            author = "albedo", showName = "createcontract.CreateContractTest-new创建合约", sourcePrefix = "evm/0.7.6")
     public void testNewContract() {
         try {
             prepare();

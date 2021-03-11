@@ -1,9 +1,9 @@
-package network.platon.test.evm.v0_7_1.function.functionVisibilityAndDecarations;
+package network.platon.test.evm.v0_7_6.function.functionVisibilityAndDecarations;
 
 import com.platon.bech32.Bech32;
 import com.platon.parameters.NetworkParameters;
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.Payable;
+import network.platon.contracts.evm.v0_7_6.Payable;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -29,7 +29,7 @@ public class PayableTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "liweic", showName = "function.PayableTest-函数声明方式Payable测试", sourcePrefix = "evm/0.7.1")
+            author = "liweic", showName = "function.PayableTest-函数声明方式Payable测试", sourcePrefix = "evm/0.7.6")
     public void payable() {
         try {
             Payable payable = Payable.deploy(web3j, transactionManager, provider).send();

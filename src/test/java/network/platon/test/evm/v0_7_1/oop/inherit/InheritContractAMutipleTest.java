@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.oop.inherit;
+package network.platon.test.evm.v0_7_6.oop.inherit;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.InheritContractAMutipleClass;
-import network.platon.contracts.evm.v0_7_1.InheritContractBMutipleClass;
+import network.platon.contracts.evm.v0_7_6.InheritContractAMutipleClass;
+import network.platon.contracts.evm.v0_7_6.InheritContractBMutipleClass;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -25,7 +25,7 @@ public class InheritContractAMutipleTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InheritContract.合约继承重名问题(遵循最远继承原则)",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "InheritContract.合约继承重名问题(遵循最远继承原则)",sourcePrefix = "evm/0.7.6")
     public void testInheritContracAtMutipleTest() {
 
         InheritContractAMutipleClass inheritContractMutipleTest1 = null;

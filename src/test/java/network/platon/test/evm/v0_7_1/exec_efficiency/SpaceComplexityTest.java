@@ -1,7 +1,7 @@
-package network.platon.test.evm.v0_7_1.exec_efficiency;
+package network.platon.test.evm.v0_7_6.exec_efficiency;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
-import network.platon.contracts.evm.v0_7_1.SpaceComplexity;
+import network.platon.contracts.evm.v0_7_6.SpaceComplexity;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -27,7 +27,7 @@ public class SpaceComplexityTest extends ContractPrepareTest {
 
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
-            author = "qcxiao", showName = "exec_efficiency.SpaceComplexityTest-空间复杂度", sourcePrefix = "evm/0.7.1")
+            author = "qcxiao", showName = "exec_efficiency.SpaceComplexityTest-空间复杂度", sourcePrefix = "evm/0.7.6")
     public void test() {
         prepare();
         try {

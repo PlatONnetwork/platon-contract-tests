@@ -1,8 +1,8 @@
-package network.platon.test.evm.v0_7_1.data_type.MappingData;
+package network.platon.test.evm.v0_7_6.data_type.MappingData;
 
 import com.platon.protocol.core.methods.response.TransactionReceipt;
 import com.platon.tuples.generated.Tuple4;
-import network.platon.contracts.evm.v0_7_1.MappingArrayDataTypeContract;
+import network.platon.contracts.evm.v0_7_6.MappingArrayDataTypeContract;
 import network.platon.test.evm.beforetest.ContractPrepareTest;
 import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
@@ -32,7 +32,7 @@ public class MappingArrayDataTypeContractTest extends ContractPrepareTest {
     }
 
     @Test
-    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "MappingDataTypeContract.mapping数组类型",sourcePrefix = "evm/0.7.1")
+    @DataSource(type = DataSourceType.EXCEL, file = "test.xls", author = "qudong", showName = "MappingDataTypeContract.mapping数组类型",sourcePrefix = "evm/0.7.6")
     public void testMappingContract() {
 
         MappingArrayDataTypeContract mappingArrayDataTypeContract = null;
