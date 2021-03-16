@@ -24,9 +24,9 @@ import java.util.Collections;
  * <p>Generated with web3j version 0.15.1.7.
  */
 public class GetLibraryAddress extends Contract {
-    private static final String BINARY = "608060405234801561001057600080fd5b50610126806100206000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80636e7c1504146037578063750c193514603f575b600080fd5b603d6071565b005b604560c7565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b73__$d9e18834d71e1c5ab303d445c6c5d0be1e$__6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690509056fea2646970667358221220b48190594ad6079126f4ba6ff72e991320a3b53838d890c86bd412e2051fe45364736f6c63430007010033\n"
+    private static final String BINARY = "608060405234801561001057600080fd5b50610126806100206000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80636e7c1504146037578063750c193514603f575b600080fd5b603d6071565b005b604560c7565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b73__$f693ce20d938d1277906365e3ba690291b$__6000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1690509056fea2646970667358221220fcef7dbfe39209f850ff4ffa4dd9306cde188928167021b63dd45b3c726a7b8b64736f6c63430007060033\n"
             + "\n"
-            + "// $d9e18834d71e1c5ab303d445c6c5d0be1e$ -> /home/platon/.jenkins/workspace/contracts_test_alaya/src/test/resources/contracts/evm/0.7.1/2.version_compatible/0_5_13/8-address_LibraryName/UserLibrary.sol:UserLibrary";
+            + "// $f693ce20d938d1277906365e3ba690291b$ -> /home/platon/.jenkins/workspace/contracts_test_alaya/src/test/resources/contracts/evm/0.7.6/2.version_compatible/0_5_13/8-address_LibraryName/UserLibrary.sol:UserLibrary";
 
     public static final String FUNC_GETUSERLIBADDRESS = "getUserLibAddress";
 
