@@ -16,6 +16,7 @@ import network.platon.autotest.junit.annotations.DataSource;
 import network.platon.autotest.junit.enums.DataSourceType;
 import network.platon.autotest.junit.rules.AssertCollector;
 import network.platon.autotest.junit.rules.DriverService;
+import network.platon.test.evm.beforetest.ContractPrepareTest;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -31,31 +32,23 @@ import java.util.concurrent.ExecutionException;
  * @author: qcxiao
  * @create: 2019/12/16 11:03
  **/
-public class PlatONTransferTest {
+public class PlatONTransferTest extends ContractPrepareTest {
 
-    @Rule
-    public DriverService driverService = new DriverService();
-
-    @Rule
-    public AssertCollector collector = new AssertCollector();
-
-    // 底层链ID
-    private long chainId;
     // 发行代币的地址
     private String transferFrom;
     // 接收代币的地址
     private String transferTo;
-    private Web3j web3j;
     // 转账的金额
     private String amount;
 
     @Before
     public void before() {
+        this.prepare();
         chainId = Integer.valueOf(driverService.param.get("chainId"));
         //transferFrom = driverService.param.get("transferFrom");
         transferFrom = driverService.param.get("address");
-//        transferTo = "lax10eycqggu2yawpadtmn7d2zdw0vnmscklynzq8x"; //driverService.param.get("transferTo");
-        transferTo = "atx10eycqggu2yawpadtmn7d2zdw0vnmscklcx6a9v"; //driverService.param.get("transferTo");
+        transferTo = "lat10eycqggu2yawpadtmn7d2zdw0vnmsckltks0ff"; //driverService.param.get("transferTo");
+//        transferTo = "atx10eycqggu2yawpadtmn7d2zdw0vnmscklcx6a9v"; //driverService.param.get("transferTo");
         amount = "1"; //driverService.param.get("amount");
     }
 
@@ -66,11 +59,8 @@ public class PlatONTransferTest {
         Credentials credentials = null;
         BigInteger nonce = null;
         try {
-            web3j = Web3j.build(new HttpService(driverService.param.get("nodeUrl")));
-            //credentials = Credentials.create(driverService.param.get("privateKeyOfTransferFrom"));
-            credentials = Credentials.create(driverService.param.get("privateKey"));
-            collector.logStepPass("currentBlockNumber:" + web3j.platonBlockNumber().send().getBlockNumber());
             //获取nonce，交易笔数
+            System.out.println(NetworkParameters.getHrp());
             transferFrom = Bech32.addressEncode(NetworkParameters.getHrp(),transferFrom);
             nonce = getNonce(transferFrom);
             collector.logStepPass("nonce:" + nonce);
@@ -96,8 +86,6 @@ public class PlatONTransferTest {
 
             //TransactionReceipt transactionReceipt = Transfer.sendFunds(web3j, credentials, transferTo, new BigDecimal("1"), Convert.Unit.VON).send();
 
-
-            TransactionManager transactionManager = new RawTransactionManager(web3j, credentials);
             Transfer transfer = new Transfer(web3j,transactionManager);
 
             TransactionReceipt transactionReceipt = transfer.sendFunds(transferTo, new BigDecimal(amount), Convert.Unit.VON).send();
