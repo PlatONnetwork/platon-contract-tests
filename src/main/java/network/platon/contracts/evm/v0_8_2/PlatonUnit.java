@@ -1,0 +1,69 @@
+package network.platon.contracts.evm.v0_8_2;
+
+import com.platon.abi.solidity.TypeReference;
+import com.platon.abi.solidity.datatypes.Function;
+import com.platon.abi.solidity.datatypes.Type;
+import com.platon.abi.solidity.datatypes.generated.Uint256;
+import com.platon.crypto.Credentials;
+import com.platon.protocol.Web3j;
+import com.platon.protocol.core.RemoteCall;
+import com.platon.tx.Contract;
+import com.platon.tx.TransactionManager;
+import com.platon.tx.gas.GasProvider;
+import java.math.BigInteger;
+import java.util.Arrays;
+
+/**
+ * <p>Auto generated code.
+ * <p><strong>Do not modify!</strong>
+ * <p>Please use the <a href="https://github.com/PlatONnetwork/client-sdk-java/releases">platon-web3j command line tools</a>,
+ * or the com.platon.codegen.SolidityFunctionWrapperGenerator in the 
+ * <a href="https://github.com/PlatONnetwork/client-sdk-java/tree/master/codegen">codegen module</a> to update.
+ *
+ * <p>Generated with web3j version 0.15.1.7.
+ */
+public class PlatonUnit extends Contract {
+    private static final String BINARY = "608060405234801561001057600080fd5b506101fa806100206000396000f3fe60806040526004361061002d5760003560e01c806312065fe014610055578063b69ef8a81461008057610046565b366100465761003e600054346100ab565b600081905550005b34801561005257600080fd5b50005b34801561006157600080fd5b5061006a6100fd565b604051610077919061011a565b60405180910390f35b34801561008c57600080fd5b50610095610105565b6040516100a2919061011a565b60405180910390f35b60008082846100ba9190610135565b9050838110156100f3577f4e487b7100000000000000000000000000000000000000000000000000000000600052600160045260246000fd5b8091505092915050565b600047905090565b60005481565b6101148161018b565b82525050565b600060208201905061012f600083018461010b565b92915050565b60006101408261018b565b915061014b8361018b565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff038211156101805761017f610195565b5b828201905092915050565b6000819050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fdfea2646970667358221220e11d6680cce5dfbae8f274288a22229dcfc5e7b87ba9043100e992f0d4231e7e64736f6c63430008020033";
+
+    public static final String FUNC_BALANCE = "balance";
+
+    public static final String FUNC_GETBALANCE = "getBalance";
+
+    protected PlatonUnit(String contractAddress, Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
+        super(BINARY, contractAddress, web3j, credentials, contractGasProvider);
+    }
+
+    protected PlatonUnit(String contractAddress, Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
+        super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
+    }
+
+    public RemoteCall<BigInteger> balance() {
+        final Function function = new Function(FUNC_BALANCE, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public RemoteCall<BigInteger> getBalance() {
+        final Function function = new Function(FUNC_GETBALANCE, 
+                Arrays.<Type>asList(), 
+                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+    }
+
+    public static RemoteCall<PlatonUnit> deploy(Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
+        return deployRemoteCall(PlatonUnit.class, web3j, credentials, contractGasProvider, BINARY,  "");
+    }
+
+    public static RemoteCall<PlatonUnit> deploy(Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
+        return deployRemoteCall(PlatonUnit.class, web3j, transactionManager, contractGasProvider, BINARY,  "");
+    }
+
+    public static PlatonUnit load(String contractAddress, Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
+        return new PlatonUnit(contractAddress, web3j, credentials, contractGasProvider);
+    }
+
+    public static PlatonUnit load(String contractAddress, Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
+        return new PlatonUnit(contractAddress, web3j, transactionManager, contractGasProvider);
+    }
+}
