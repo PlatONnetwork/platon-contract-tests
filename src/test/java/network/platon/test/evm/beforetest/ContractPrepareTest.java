@@ -22,8 +22,8 @@ public class ContractPrepareTest extends BaseTest {
     protected RawTransactionManager transactionManager;
     protected ContractGasProvider provider;
     protected String walletAddress;
-    protected String gasLimit = "4712388";
-    protected String gasPrice = "4000000000000000";
+    protected String gasLimit = "9424776";
+    protected String gasPrice = "3000000000000000";
 
     /**
      * 合约部署相关准备工作
