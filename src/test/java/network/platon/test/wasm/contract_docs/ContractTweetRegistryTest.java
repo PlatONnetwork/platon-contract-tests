@@ -44,8 +44,7 @@ public class ContractTweetRegistryTest extends WASMContractPrepareTest {
 
             // registry
             String addr = credentials.getAddress();
-//            addr = "lax1w2kjkufl4g2v93xd94a0lewc75ufdr66rnzuw2";
-            addr = "atx1w2kjkufl4g2v93xd94a0lewc75ufdr66lx6pvq";
+            addr = "lat1w2kjkufl4g2v93xd94a0lewc75ufdr66vksnq9";
             TransactionReceipt registrTr = contract.registry("bob", new WasmAddress(addr)).send();
             collector.logStepPass("Send registry, hash: " + registrTr.getTransactionHash() + " gasUsed: " + registrTr.getGasUsed());
 

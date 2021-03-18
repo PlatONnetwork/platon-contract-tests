@@ -52,9 +52,7 @@ public class ContractVIDTokenTest extends WASMContractPrepareTest {
 
 
             // transfer in contract
-//            String to = "lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6";
             String toPrivateKey = this.generatePrivateKey();
-//            String to = "atx1fyeszufxwxk62p46djncj86rd553skpph926ws";
             String to = Credentials.create(toPrivateKey).getAddress();
             Xuint128 value = new Xuint128("100000");
             TransactionReceipt transferTr = contract.Transfer(to, value).send();
@@ -108,8 +106,6 @@ public class ContractVIDTokenTest extends WASMContractPrepareTest {
             collector.logStepPass("Transfer to contract , address: " + spendCredentials.getAddress() + " spendBalance: " + spendBalance);
 
             TransactionManager spenderTM = new RawTransactionManager(web3j, spendCredentials);
-//            String to2 = "lax1rcdwxsrnwlmcjarslme34qy88d8awh9pnjpmz9";
-//            String to2 = "atx1rcdwxsrnwlmcjarslme34qy88d8awh9p08exq0";
             //to2 address random generate
             String to2 = Credentials.create(this.generatePrivateKey()).getAddress();
             Xuint128 valule2 = new Xuint128("10000");

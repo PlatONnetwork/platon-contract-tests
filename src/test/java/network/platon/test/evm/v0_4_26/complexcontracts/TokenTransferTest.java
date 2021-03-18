@@ -26,7 +26,7 @@ public class TokenTransferTest extends ContractPrepareTest {
     // 发行代币的总额
     private String ownerAmount;
     // 接收代币的地址
-    private final static String transferTo = "atx1354ckckjla0869lernuzrjh7arslu3vyanptca";
+    private final static String transferTo = "lat1354ckckjla0869lernuzrjh7arslu3vywrte5c";
     // 代币名称
     private String tokenName;
     // 发行代币的地址

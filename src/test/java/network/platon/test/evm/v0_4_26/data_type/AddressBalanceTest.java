@@ -21,8 +21,7 @@ public class AddressBalanceTest extends ContractPrepareTest {
             showName = "AddressBalanceTest.查询某地址余额",sourcePrefix = "evm/0.4.26")
     public void test() {
 
-//        String useAddress = "lax10eycqggu2yawpadtmn7d2zdw0vnmscklynzq8x";
-        String useAddress = "atx10eycqggu2yawpadtmn7d2zdw0vnmscklcx6a9v";
+        String useAddress = "lat10eycqggu2yawpadtmn7d2zdw0vnmsckltks0ff";
 
         AddressBalance addressBalance = null;
         try {

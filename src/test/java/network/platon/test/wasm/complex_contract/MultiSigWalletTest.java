@@ -29,18 +29,14 @@ public class MultiSigWalletTest extends WASMContractPrepareTest {
             author = "hudenian", showName = "wasm.MultiSigWalletTest-MultiSigWallet", sourcePrefix = "wasm")
     public void testMultiSigWallet() {
 
-//        String address1 = "lax1w2kjkufl4g2v93xd94a0lewc75ufdr66rnzuw2";
-        String address1 = "atx1w2kjkufl4g2v93xd94a0lewc75ufdr66lx6pvq";
-//        String address2 = "lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6";
-        String address2 = "atx1fyeszufxwxk62p46djncj86rd553skpph926ws";
-        /*String address3 = "lax1570qv7qgyd0nrsaprht5e6m285wrk3ddyeafxt";
-        String address4 = "lax1tvma40k6uphdk9pz27qeltfqwxves6vjx3wjjk";*/
-//        String address5 = "lax1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl";
-        String address5 = "atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljazusp4";
+        String address1 = "lat1w2kjkufl4g2v93xd94a0lewc75ufdr66vksnq9";
+        String address2 = "lat1fyeszufxwxk62p46djncj86rd553skppy4qgz4";
+//        String address3 = "lat1570qv7qgyd0nrsaprht5e6m285wrk3ddtu0xgy";
+//        String address4 = "lat1tvma40k6uphdk9pz27qeltfqwxves6vjf5uaue";
+        String address5 = "lat1uqug0zq7rcxddndleq4ux2ft3tv6dqljwjkzds";
         Set<WasmAddress> owners = new HashSet<>();
         owners.add(new WasmAddress(address1));
         owners.add(new WasmAddress(address2));
-//        owners.add(new WasmAddress(address3));
 
         try {
             MultiSigWallet multiSigWallet = MultiSigWallet.deploy(web3j, transactionManager, provider, Uint64.of("2"), owners).send();

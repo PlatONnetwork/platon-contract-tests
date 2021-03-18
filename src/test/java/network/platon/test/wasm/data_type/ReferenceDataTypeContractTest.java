@@ -42,11 +42,7 @@ public class ReferenceDataTypeContractTest extends WASMContractPrepareTest {
 
             // test: map
             String expectKey1 = "name";
-//            WasmAddress expectValue11 = new WasmAddress("lax1uqug1zq7rcxddndleq4ux2ft3tv6dqljphydrl");
-//            String expectValue11 = "lax1uqug0zq7rcxddndleq4ux2ft3tv6dqljphydrl";
-            String expectValue11 = "atx1uqug0zq7rcxddndleq4ux2ft3tv6dqljazusp4";
-//            String expectValue11 = "lax1uqug1zq7rcxddndleq4ux2ft3tv6dqljphydrl";
-//            String expectValue11 = "lax1w2kjkufl4g2v93xd94a0lewc75ufdr66rnzuw2";
+            String expectValue11 = "lat1uqug0zq7rcxddndleq4ux2ft3tv6dqljwjkzds";
             TransactionReceipt mapTr = contract.setAddressMap(expectKey1, expectValue11).send();
             collector.logStepPass("To invoke setAddressMap success, txHash1: " + mapTr.getTransactionHash());
 
@@ -54,9 +50,7 @@ public class ReferenceDataTypeContractTest extends WASMContractPrepareTest {
             collector.logStepPass("num1: " + num1.value);
 
             String expectKey2 = "name2";
-//            String expectValue2 = "lax1uqug2zq7rcxddndleq4ux2ft3tv6dqljphydrl";
-//            String expectValue2 = "lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6";
-            String expectValue2 = "atx1fyeszufxwxk62p46djncj86rd553skpph926ws";
+            String expectValue2 = "lat1fyeszufxwxk62p46djncj86rd553skppy4qgz4";
             TransactionReceipt mapTr2 = contract.setAddressMap(expectKey2, expectValue2).send();
             collector.logStepPass("To invoke setAddressMap success, txHash2: " + mapTr2.getTransactionHash());
 

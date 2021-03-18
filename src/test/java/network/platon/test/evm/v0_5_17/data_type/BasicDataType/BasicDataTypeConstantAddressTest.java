@@ -52,8 +52,7 @@ public class BasicDataTypeConstantAddressTest extends ContractPrepareTest {
         //1、验证：address类型，转账给指定地址
         try {
             int expectValue = Integer.parseInt(amountSumValue);
-//            String myContractAddress = "lax132dnv620rmht2qxgfgvmkdqn0vz3vtkfw87hjs";
-            String myContractAddress = "atx132dnv620rmht2qxgfgvmkdqn0vz3vtkfjjx2s6";
+            String myContractAddress = "lat132dnv620rmht2qxgfgvmkdqn0vz3vtkfpzvcul";
 
             //1)、查询地址余额
             BigInteger contractBalance = basicDataTypeConstantContract.getBalance(myContractAddress).send();

@@ -13,20 +13,15 @@ import network.platon.test.wasm.beforetest.WASMContractPrepareTest;
 public class ContractDelegateCallPPOSTest extends WASMContractPrepareTest {
 
     // 锁仓合约
-//    private String restrictingContractAddr = "lax1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp3yp7hw";
-    private String restrictingContractAddr = "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpd3er4y";
+    private String restrictingContractAddr = "lat1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp7pn3ep";
 
-//    private String stakingContractAddr = "lax1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzlh5ge3";
-    private String stakingContractAddr = "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzrzv4mm";
+    private String stakingContractAddr = "lat1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzsjx8h7";
 
-//    private String slashingContractAddr = "lax1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyrchd9x";
-    private String slashingContractAddr = "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyld0s8v";
+    private String slashingContractAddr = "lat1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyva9ztf";
 
-//    private String govContractAddr = "lax1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq97wrcc5";
-    private String govContractAddr = "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9zmm967";
+    private String govContractAddr = "lat1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq93t3hkm";
 
-//    private String delegateRewardPoolAddr = "lax1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxsakwkt";
-    private String delegateRewardPoolAddr = "atx1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxvgwn5p";
+    private String delegateRewardPoolAddr = "lat1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxlcypcy";
 
 
     private Gson gson = new Gson();

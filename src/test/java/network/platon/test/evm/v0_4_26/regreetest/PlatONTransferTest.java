@@ -41,7 +41,7 @@ public class PlatONTransferTest extends ContractPrepareTest {
     public void before() {
         this.prepare();
         transferFrom = driverService.param.get("address");
-        transferTo = "atx10eycqggu2yawpadtmn7d2zdw0vnmscklcx6a9v"; //driverService.param.get("transferTo");
+        transferTo = "lat10eycqggu2yawpadtmn7d2zdw0vnmsckltks0ff"; //driverService.param.get("transferTo");
         amount = "1"; //driverService.param.get("amount");
     }
 
