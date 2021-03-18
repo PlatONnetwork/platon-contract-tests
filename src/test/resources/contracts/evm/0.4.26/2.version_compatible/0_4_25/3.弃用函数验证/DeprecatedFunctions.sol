@@ -11,8 +11,8 @@ pragma solidity ^0.4.26;
  **/
 contract DeprecatedFunctions {
     function functionCheck() public view returns (bool, bytes32){
-        address _to = "lax1eg6m0kg4gk802s9ducrgml30gn505ueuswqu73";
-        address _from = "lat16f0dq2wqj0jkhjy3rgruge29qqxt7d7x6875x6";  //lax16f0dq2wqj0jkhjy3rgruge29qqxt7d7x4zvmg4
+        address _to = "lat1eg6m0kg4gk802s9ducrgml30gn505ueultjns7";
+        address _from = "lat16f0dq2wqj0jkhjy3rgruge29qqxt7d7x6875x6";
         //callcode() 验证
         bool callcodeResult = _from.callcode(_to);
         //sha3() 验证
@@ -29,7 +29,7 @@ contract DeprecatedFunctions {
     }
 
     function kill() public {
-        address _to = "lat1eg6m0kg4gk802s9ducrgml30gn505ueultjns7"; // lax1eg6m0kg4gk802s9ducrgml30gn505ueuswqu73
+        address _to = "lat1eg6m0kg4gk802s9ducrgml30gn505ueultjns7";
         //suicide() 验证
         suicide(_to);
     }

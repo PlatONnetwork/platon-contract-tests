@@ -161,7 +161,7 @@ contract VIDToken is Owned, Pausable, ERC20 {
 	uint256 public validationPrice = 7 * 10 ** uint(decimals); 
 
 // The default validation wallet
-	address public validationWallet = address("lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmscn5j");
+	address public validationWallet = address("lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq542u6a");
 
 // The constructor is invoked on contract creation, it sets the contract owner and default wallet
 
@@ -170,7 +170,7 @@ contract VIDToken is Owned, Pausable, ERC20 {
 		verifyWallet[msg.sender] = true;
 		totalSupply = initialSupply * 10 ** uint(decimals);
 		balances[msg.sender] = totalSupply;
-		emit Transfer(address("lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmscn5j"),owner,initialSupply);
+		emit Transfer(address("lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq542u6a"),owner,initialSupply);
 	}
 
 // The fallback function which will be invoked when the function signature is not found, the revert() prevents the contract from receiving Ethereum
@@ -291,7 +291,7 @@ contract VIDToken is Owned, Pausable, ERC20 {
 
 		emit Burn(msg.sender, _value);
 
-		emit Transfer(msg.sender, address("lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmscn5j"), _value);
+		emit Transfer(msg.sender, address("lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq542u6a"), _value);
 
 		return true;
 	}

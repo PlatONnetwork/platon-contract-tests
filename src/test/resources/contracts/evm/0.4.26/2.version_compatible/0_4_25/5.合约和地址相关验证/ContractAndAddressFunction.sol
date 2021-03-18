@@ -12,7 +12,7 @@ pragma solidity ^0.4.26;
 contract ContractAndAddressFunction {
 
     function addressCheck() public view returns (address,uint256,uint256) {
-        address x = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfreqpsmj"; //0x123、lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfrk9nl4a
+        address x = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfrk9nl4a";
         address myAddress = this;
         //0.4.25版本contract合约类型包括 address类型的成员函数，可以直接使用 balance成员变量验证
         if (x.balance < 10 && myAddress.balance >= 10)

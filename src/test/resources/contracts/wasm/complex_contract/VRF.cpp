@@ -33,7 +33,7 @@ CONTRACT VRF : public platon::Contract{
             wordLengthBytes.self() = 32; //0x20;
             SCALAR_FROM_CURVE_POINTS_HASH_PREFIX.self() = 2;
             VRF_RANDOM_OUTPUT_HASH_PREFIX.self() = 3;
-            address_str.self() = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzg4es8l";
+            address_str.self() = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8stlfs";
             PROOF_LENGTH.self() =  64 + // PublicKey (uncompressed format.)
                             64 + // Gamma
                             32 + // C
@@ -116,7 +116,7 @@ CONTRACT VRF : public platon::Contract{
         bytes keccak256(bytes &bt){
             u128 value = 12;
             u128 gas = 4712388;
-            std::string target_addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzg4es8l";
+            std::string target_addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8stlfs";
             platon::bytes ret;
 
             auto address_info = make_address(target_addr);
@@ -243,7 +243,7 @@ CONTRACT VRF : public platon::Contract{
            u128 gas = 4712388;
 
            Address addr;
-           auto address_info = make_address("lax1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqvj4t2u");
+           auto address_info = make_address("lat1zqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrh8yyn");
            if(address_info.second){
              addr = address_info.first;
            }

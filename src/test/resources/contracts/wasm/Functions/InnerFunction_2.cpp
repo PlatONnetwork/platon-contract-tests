@@ -86,7 +86,7 @@ CONTRACT InnerFunction_2:public platon::Contract{
 		CONST Address addr(){
 
             Address address;
-		    auto address_info = make_address("lax1fyeszufxwxk62p46djncj86rd553skpptsj8v6");
+		    auto address_info = make_address("lat1fyeszufxwxk62p46djncj86rd553skppy4qgz4");
             if(address_info.second){
                 address = address_info.first;
             }

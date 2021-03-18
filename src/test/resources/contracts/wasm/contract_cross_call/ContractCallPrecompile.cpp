@@ -28,7 +28,7 @@ CONTRACT call_precompile : public platon::Contract {
 
                     platon::bytes input = msgh;
 
-                    std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpxxvxfq";
+                    std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpfr7f80";
                     auto address_info = make_address(addr);
                     if(address_info.second){
                         if (platon_call(address_info.first, input, value, gas)) {
@@ -60,7 +60,7 @@ CONTRACT call_precompile : public platon::Contract {
 
                     platon::bytes  input = fromHex(in);
 
-//                    std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzg4es8l";
+//                    std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8stlfs";
                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz5qpd94";
 
                      auto address_info = make_address(addr);
@@ -91,7 +91,7 @@ CONTRACT call_precompile : public platon::Contract {
 
                      platon::bytes  input = fromHex(in);
 
-                     std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr4rd96d";
+                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr6xl25z";
                       auto address_info = make_address(addr);
                       if(address_info.second){
                          if (platon_call(address_info.first, input, value, gas)) {
@@ -120,7 +120,7 @@ CONTRACT call_precompile : public platon::Contract {
 
                      platon::bytes  input = fromHex(in);
 
-                     std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy5664mg";
+                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqymlg648";
                      auto address_info = make_address(addr);
                      if(address_info.second){
                          if (platon_call(address_info.first, input, value, gas)) {
@@ -167,7 +167,7 @@ CONTRACT call_precompile : public platon::Contract {
                       // append modulus
                       std::copy(modulus.begin(), modulus.end(), std::back_inserter(input));
 
-                     std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9fvwqx6";
+                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9xfu0g4";
 
                      auto address_info = make_address(addr);
                      if(address_info.second){
@@ -201,7 +201,7 @@ CONTRACT call_precompile : public platon::Contract {
                      std::copy(bx.begin(), bx.end(), std::back_inserter(input));
                      std::copy(by.begin(), by.end(), std::back_inserter(input));
 
-                     std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqx8lmkg9";
+                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxg6fex2";
                      auto address_info = make_address(addr);
                      if(address_info.second){
                          if (platon_call(address_info.first, input, value, gas)) {
@@ -235,7 +235,7 @@ CONTRACT call_precompile : public platon::Contract {
                      std::copy(y.begin(), y.end(), std::back_inserter(input));
                      std::copy(scalar.begin(), scalar.end(), std::back_inserter(input));
 
-                     std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq86f0r4h";
+                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq84vavmc";
 
                      auto address_info = make_address(addr);
                      if(address_info.second){
@@ -264,7 +264,7 @@ CONTRACT call_precompile : public platon::Contract {
 
                      platon::bytes  input = fromHex(in);
 
-                     std::string addr = "lax1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqg9yul20";
+                     std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqg2pwsyq";
 
                      auto address_info = make_address(addr);
                      if(address_info.second){
