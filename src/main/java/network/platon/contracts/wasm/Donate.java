@@ -39,11 +39,11 @@ public class Donate extends WasmContract {
 
     public static String BINARY = BINARY_0;
 
-    public static final String FUNC_GETCHARITY = "getCharity";
-
     public static final String FUNC_GETOWNER = "getOwner";
 
     public static final String FUNC_PAUSE = "pause";
+
+    public static final String FUNC_GETCHARITY = "getCharity";
 
     public static final String FUNC_UNPAUSE = "unpause";
 
@@ -93,11 +93,6 @@ public class Donate extends WasmContract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public RemoteCall<WasmAddress> getCharity() {
-        final WasmFunction function = new WasmFunction(FUNC_GETCHARITY, Arrays.asList(), WasmAddress.class);
-        return executeRemoteCall(function, WasmAddress.class);
-    }
-
     public RemoteCall<WasmAddress> getOwner() {
         final WasmFunction function = new WasmFunction(FUNC_GETOWNER, Arrays.asList(), WasmAddress.class);
         return executeRemoteCall(function, WasmAddress.class);
@@ -144,6 +139,11 @@ public class Donate extends WasmContract {
     public RemoteCall<TransactionReceipt> pause(BigInteger vonValue) {
         final WasmFunction function = new WasmFunction(FUNC_PAUSE, Arrays.asList(), Void.class);
         return executeRemoteCallTransaction(function, vonValue);
+    }
+
+    public RemoteCall<WasmAddress> getCharity() {
+        final WasmFunction function = new WasmFunction(FUNC_GETCHARITY, Arrays.asList(), WasmAddress.class);
+        return executeRemoteCall(function, WasmAddress.class);
     }
 
     public RemoteCall<TransactionReceipt> unpause() {

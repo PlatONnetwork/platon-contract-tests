@@ -27,9 +27,9 @@ public class InitWithArrayParams extends WasmContract {
 
     public static String BINARY = BINARY_0;
 
-    public static final String FUNC_SET_ARRAY = "set_array";
-
     public static final String FUNC_GET_ARRAY_CONTAIN_ELEMENT = "get_array_contain_element";
+
+    public static final String FUNC_SET_ARRAY = "set_array";
 
     public static final String FUNC_GET_ARRAY = "get_array";
 
@@ -41,16 +41,6 @@ public class InitWithArrayParams extends WasmContract {
 
     protected InitWithArrayParams(String contractAddress, Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
-    }
-
-    public RemoteCall<TransactionReceipt> set_array(String[] inArray) {
-        final WasmFunction function = new WasmFunction(FUNC_SET_ARRAY, Arrays.asList(inArray, Void.class), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> set_array(String[] inArray, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_SET_ARRAY, Arrays.asList(inArray, Void.class), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<Boolean> get_array_contain_element(String value) {
@@ -76,6 +66,16 @@ public class InitWithArrayParams extends WasmContract {
     public static RemoteCall<InitWithArrayParams> deploy(Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider, BigInteger initialVonValue, String[] inArray) {
         String encodedConstructor = WasmFunctionEncoder.encodeConstructor(BINARY, Arrays.asList(inArray, Void.class));
         return deployRemoteCall(InitWithArrayParams.class, web3j, transactionManager, contractGasProvider, encodedConstructor, initialVonValue);
+    }
+
+    public RemoteCall<TransactionReceipt> set_array(String[] inArray) {
+        final WasmFunction function = new WasmFunction(FUNC_SET_ARRAY, Arrays.asList(inArray, Void.class), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> set_array(String[] inArray, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_SET_ARRAY, Arrays.asList(inArray, Void.class), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<String[]> get_array() {

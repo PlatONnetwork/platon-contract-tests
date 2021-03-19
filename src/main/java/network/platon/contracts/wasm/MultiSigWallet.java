@@ -53,10 +53,10 @@ public class MultiSigWallet extends WasmContract {
     public static final WasmEvent OWNERADDED_EVENT = new WasmEvent("OwnerAdded", Arrays.asList(new WasmEventParameter(String.class, true)), Arrays.asList(new WasmEventParameter(WasmAddress.class)));
     ;
 
-    public static final WasmEvent OWNERREMOVED_EVENT = new WasmEvent("OwnerRemoved", Arrays.asList(new WasmEventParameter(String.class, true)), Arrays.asList(new WasmEventParameter(Uint64.class)));
+    public static final WasmEvent THRESHOLDCHANGED_EVENT = new WasmEvent("ThresholdChanged", Arrays.asList(new WasmEventParameter(String.class, true)), Arrays.asList(new WasmEventParameter(Uint64.class)));
     ;
 
-    public static final WasmEvent THRESHOLDCHANGED_EVENT = new WasmEvent("ThresholdChanged", Arrays.asList(new WasmEventParameter(String.class, true)), Arrays.asList(new WasmEventParameter(Uint64.class)));
+    public static final WasmEvent OWNERREMOVED_EVENT = new WasmEvent("OwnerRemoved", Arrays.asList(new WasmEventParameter(String.class, true)), Arrays.asList(new WasmEventParameter(Uint64.class)));
     ;
 
     public static final WasmEvent EXECUTED_EVENT = new WasmEvent("Executed", Arrays.asList(new WasmEventParameter(String.class, true)), Arrays.asList(new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(Uint64.class) , new WasmEventParameter(String.class)));
@@ -106,39 +106,6 @@ public class MultiSigWallet extends WasmContract {
         return ownerAddedEventObservable(filter);
     }
 
-    public List<OwnerRemovedEventResponse> getOwnerRemovedEvents(TransactionReceipt transactionReceipt) {
-        List<WasmContract.WasmEventValuesWithLog> valueList = extractEventParametersWithLog(OWNERREMOVED_EVENT, transactionReceipt);
-        ArrayList<OwnerRemovedEventResponse> responses = new ArrayList<OwnerRemovedEventResponse>(valueList.size());
-        for (WasmContract.WasmEventValuesWithLog eventValues : valueList) {
-            OwnerRemovedEventResponse typedResponse = new OwnerRemovedEventResponse();
-            typedResponse.log = eventValues.getLog();
-            typedResponse.topic = (String) eventValues.getIndexedValues().get(0);
-            typedResponse.arg1 = (Uint64) eventValues.getNonIndexedValues().get(0);
-            responses.add(typedResponse);
-        }
-        return responses;
-    }
-
-    public Observable<OwnerRemovedEventResponse> ownerRemovedEventObservable(PlatonFilter filter) {
-        return web3j.platonLogObservable(filter).map(new Func1<Log, OwnerRemovedEventResponse>() {
-            @Override
-            public OwnerRemovedEventResponse call(Log log) {
-                WasmContract.WasmEventValuesWithLog eventValues = extractEventParametersWithLog(OWNERREMOVED_EVENT, log);
-                OwnerRemovedEventResponse typedResponse = new OwnerRemovedEventResponse();
-                typedResponse.log = log;
-                typedResponse.topic = (String) eventValues.getIndexedValues().get(0);
-                typedResponse.arg1 = (Uint64) eventValues.getNonIndexedValues().get(0);
-                return typedResponse;
-            }
-        });
-    }
-
-    public Observable<OwnerRemovedEventResponse> ownerRemovedEventObservable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
-        PlatonFilter filter = new PlatonFilter(startBlock, endBlock, getContractAddress());
-        filter.addSingleTopic(WasmEventEncoder.encode(OWNERREMOVED_EVENT));
-        return ownerRemovedEventObservable(filter);
-    }
-
     public List<ThresholdChangedEventResponse> getThresholdChangedEvents(TransactionReceipt transactionReceipt) {
         List<WasmContract.WasmEventValuesWithLog> valueList = extractEventParametersWithLog(THRESHOLDCHANGED_EVENT, transactionReceipt);
         ArrayList<ThresholdChangedEventResponse> responses = new ArrayList<ThresholdChangedEventResponse>(valueList.size());
@@ -170,6 +137,39 @@ public class MultiSigWallet extends WasmContract {
         PlatonFilter filter = new PlatonFilter(startBlock, endBlock, getContractAddress());
         filter.addSingleTopic(WasmEventEncoder.encode(THRESHOLDCHANGED_EVENT));
         return thresholdChangedEventObservable(filter);
+    }
+
+    public List<OwnerRemovedEventResponse> getOwnerRemovedEvents(TransactionReceipt transactionReceipt) {
+        List<WasmContract.WasmEventValuesWithLog> valueList = extractEventParametersWithLog(OWNERREMOVED_EVENT, transactionReceipt);
+        ArrayList<OwnerRemovedEventResponse> responses = new ArrayList<OwnerRemovedEventResponse>(valueList.size());
+        for (WasmContract.WasmEventValuesWithLog eventValues : valueList) {
+            OwnerRemovedEventResponse typedResponse = new OwnerRemovedEventResponse();
+            typedResponse.log = eventValues.getLog();
+            typedResponse.topic = (String) eventValues.getIndexedValues().get(0);
+            typedResponse.arg1 = (Uint64) eventValues.getNonIndexedValues().get(0);
+            responses.add(typedResponse);
+        }
+        return responses;
+    }
+
+    public Observable<OwnerRemovedEventResponse> ownerRemovedEventObservable(PlatonFilter filter) {
+        return web3j.platonLogObservable(filter).map(new Func1<Log, OwnerRemovedEventResponse>() {
+            @Override
+            public OwnerRemovedEventResponse call(Log log) {
+                WasmContract.WasmEventValuesWithLog eventValues = extractEventParametersWithLog(OWNERREMOVED_EVENT, log);
+                OwnerRemovedEventResponse typedResponse = new OwnerRemovedEventResponse();
+                typedResponse.log = log;
+                typedResponse.topic = (String) eventValues.getIndexedValues().get(0);
+                typedResponse.arg1 = (Uint64) eventValues.getNonIndexedValues().get(0);
+                return typedResponse;
+            }
+        });
+    }
+
+    public Observable<OwnerRemovedEventResponse> ownerRemovedEventObservable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
+        PlatonFilter filter = new PlatonFilter(startBlock, endBlock, getContractAddress());
+        filter.addSingleTopic(WasmEventEncoder.encode(OWNERREMOVED_EVENT));
+        return ownerRemovedEventObservable(filter);
     }
 
     public List<ExecutedEventResponse> getExecutedEvents(TransactionReceipt transactionReceipt) {
@@ -329,7 +329,7 @@ public class MultiSigWallet extends WasmContract {
         public WasmAddress arg1;
     }
 
-    public static class OwnerRemovedEventResponse {
+    public static class ThresholdChangedEventResponse {
         public Log log;
 
         public String topic;
@@ -337,7 +337,7 @@ public class MultiSigWallet extends WasmContract {
         public Uint64 arg1;
     }
 
-    public static class ThresholdChangedEventResponse {
+    public static class OwnerRemovedEventResponse {
         public Log log;
 
         public String topic;

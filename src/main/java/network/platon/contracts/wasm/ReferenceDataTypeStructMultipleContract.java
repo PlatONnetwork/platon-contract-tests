@@ -44,6 +44,16 @@ public class ReferenceDataTypeStructMultipleContract extends WasmContract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
+    public RemoteCall<TransactionReceipt> setGroupArrayValue(String oneValue, String twoValue) {
+        final WasmFunction function = new WasmFunction(FUNC_SETGROUPARRAYVALUE, Arrays.asList(oneValue,twoValue), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> setGroupArrayValue(String oneValue, String twoValue, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_SETGROUPARRAYVALUE, Arrays.asList(oneValue,twoValue), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
+    }
+
     public static RemoteCall<ReferenceDataTypeStructMultipleContract> deploy(Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
         String encodedConstructor = WasmFunctionEncoder.encodeConstructor(BINARY, Arrays.asList());
         return deployRemoteCall(ReferenceDataTypeStructMultipleContract.class, web3j, credentials, contractGasProvider, encodedConstructor);
@@ -62,16 +72,6 @@ public class ReferenceDataTypeStructMultipleContract extends WasmContract {
     public static RemoteCall<ReferenceDataTypeStructMultipleContract> deploy(Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider, BigInteger initialVonValue) {
         String encodedConstructor = WasmFunctionEncoder.encodeConstructor(BINARY, Arrays.asList());
         return deployRemoteCall(ReferenceDataTypeStructMultipleContract.class, web3j, transactionManager, contractGasProvider, encodedConstructor, initialVonValue);
-    }
-
-    public RemoteCall<TransactionReceipt> setGroupArrayValue(String oneValue, String twoValue) {
-        final WasmFunction function = new WasmFunction(FUNC_SETGROUPARRAYVALUE, Arrays.asList(oneValue,twoValue), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> setGroupArrayValue(String oneValue, String twoValue, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_SETGROUPARRAYVALUE, Arrays.asList(oneValue,twoValue), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<TransactionReceipt> setGroupValue(String myGroupName, Uint64 myGroupId) {

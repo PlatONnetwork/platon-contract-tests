@@ -27,17 +27,17 @@ public class MultiIndexContract extends WasmContract {
 
     public static String BINARY = BINARY_0;
 
-    public static final String FUNC_MULTIINDEXMODIFY = "MultiIndexModify";
-
-    public static final String FUNC_MULTIINDEXERASE = "MultiIndexErase";
-
     public static final String FUNC_GETMULTIINDEXCEND = "getMultiIndexCend";
 
     public static final String FUNC_GETMULTIINDEXINDEX = "getMultiIndexIndex";
 
+    public static final String FUNC_MULTIINDEXMODIFY = "MultiIndexModify";
+
     public static final String FUNC_ADDINITMULTIINDEX = "addInitMultiIndex";
 
     public static final String FUNC_GETMULTIINDEXCBEGIN = "getMultiIndexCbegin";
+
+    public static final String FUNC_MULTIINDEXERASE = "MultiIndexErase";
 
     public static final String FUNC_GETMULTIINDEXCOUNT = "getMultiIndexCount";
 
@@ -51,26 +51,6 @@ public class MultiIndexContract extends WasmContract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public RemoteCall<TransactionReceipt> MultiIndexModify(String my_name) {
-        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXMODIFY, Arrays.asList(my_name), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> MultiIndexModify(String my_name, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXMODIFY, Arrays.asList(my_name), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
-    }
-
-    public RemoteCall<TransactionReceipt> MultiIndexErase(String my_name) {
-        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXERASE, Arrays.asList(my_name), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> MultiIndexErase(String my_name, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXERASE, Arrays.asList(my_name), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
-    }
-
     public RemoteCall<Boolean> getMultiIndexCend(Uint8 my_sex) {
         final WasmFunction function = new WasmFunction(FUNC_GETMULTIINDEXCEND, Arrays.asList(my_sex), Boolean.class);
         return executeRemoteCall(function, Boolean.class);
@@ -79,6 +59,16 @@ public class MultiIndexContract extends WasmContract {
     public RemoteCall<Boolean> getMultiIndexIndex(Uint8 my_age) {
         final WasmFunction function = new WasmFunction(FUNC_GETMULTIINDEXINDEX, Arrays.asList(my_age), Boolean.class);
         return executeRemoteCall(function, Boolean.class);
+    }
+
+    public RemoteCall<TransactionReceipt> MultiIndexModify(String my_name) {
+        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXMODIFY, Arrays.asList(my_name), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> MultiIndexModify(String my_name, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXMODIFY, Arrays.asList(my_name), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public static RemoteCall<MultiIndexContract> deploy(Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
@@ -114,6 +104,16 @@ public class MultiIndexContract extends WasmContract {
     public RemoteCall<Boolean> getMultiIndexCbegin(String my_name) {
         final WasmFunction function = new WasmFunction(FUNC_GETMULTIINDEXCBEGIN, Arrays.asList(my_name), Boolean.class);
         return executeRemoteCall(function, Boolean.class);
+    }
+
+    public RemoteCall<TransactionReceipt> MultiIndexErase(String my_name) {
+        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXERASE, Arrays.asList(my_name), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> MultiIndexErase(String my_name, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_MULTIINDEXERASE, Arrays.asList(my_name), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<Uint8> getMultiIndexCount(Uint8 my_age) {

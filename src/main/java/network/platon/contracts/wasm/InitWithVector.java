@@ -29,8 +29,6 @@ public class InitWithVector extends WasmContract {
 
     public static String BINARY = BINARY_0;
 
-    public static final String FUNC_VECTORFOR = "vectorFor";
-
     public static final String FUNC_ADD_VECTOR = "add_vector";
 
     public static final String FUNC_GET_VECTOR_SIZE = "get_vector_size";
@@ -47,6 +45,8 @@ public class InitWithVector extends WasmContract {
 
     public static final String FUNC_GET_VECTOR_ELEMENT_BY_POSITION = "get_vector_element_by_position";
 
+    public static final String FUNC_VECTORFOR = "vectorFor";
+
     public static final String FUNC_VECTORCASE = "vectorCase";
 
     public static final String FUNC_GET_VECTORCASE_RESULT = "get_vectorCase_result";
@@ -57,16 +57,6 @@ public class InitWithVector extends WasmContract {
 
     protected InitWithVector(String contractAddress, Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
-    }
-
-    public RemoteCall<TransactionReceipt> vectorFor(String[] inVector) {
-        final WasmFunction function = new WasmFunction(FUNC_VECTORFOR, Arrays.asList(inVector, Void.class), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> vectorFor(String[] inVector, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_VECTORFOR, Arrays.asList(inVector, Void.class), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public static RemoteCall<InitWithVector> deploy(Web3j web3j, Credentials credentials, GasProvider contractGasProvider, Uint16 age) {
@@ -147,6 +137,16 @@ public class InitWithVector extends WasmContract {
     public RemoteCall<String> get_vector_element_by_position(Uint8 index) {
         final WasmFunction function = new WasmFunction(FUNC_GET_VECTOR_ELEMENT_BY_POSITION, Arrays.asList(index), String.class);
         return executeRemoteCall(function, String.class);
+    }
+
+    public RemoteCall<TransactionReceipt> vectorFor(String[] inVector) {
+        final WasmFunction function = new WasmFunction(FUNC_VECTORFOR, Arrays.asList(inVector, Void.class), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> vectorFor(String[] inVector, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_VECTORFOR, Arrays.asList(inVector, Void.class), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<TransactionReceipt> vectorCase(String[] inVector) {

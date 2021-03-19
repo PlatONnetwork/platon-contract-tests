@@ -51,10 +51,10 @@ public class AtomicSwap extends WasmContract {
 
     public static final String FUNC_REDEEM = "redeem";
 
-    public static final WasmEvent ADDED_EVENT = new WasmEvent("Added", Arrays.asList(), Arrays.asList(new WasmEventParameter(byte[].class) , new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(Uint128.class)));
+    public static final WasmEvent INITIATED_EVENT = new WasmEvent("Initiated", Arrays.asList(new WasmEventParameter(byte[].class, true)), Arrays.asList(new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(Uint64.class) , new WasmEventParameter(Uint128.class) , new WasmEventParameter(Uint128.class)));
     ;
 
-    public static final WasmEvent INITIATED_EVENT = new WasmEvent("Initiated", Arrays.asList(new WasmEventParameter(byte[].class, true)), Arrays.asList(new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(Uint64.class) , new WasmEventParameter(Uint128.class) , new WasmEventParameter(Uint128.class)));
+    public static final WasmEvent ADDED_EVENT = new WasmEvent("Added", Arrays.asList(), Arrays.asList(new WasmEventParameter(byte[].class) , new WasmEventParameter(WasmAddress.class) , new WasmEventParameter(Uint128.class)));
     ;
 
     public static final WasmEvent REDEEMED_EVENT = new WasmEvent("Redeemed", Arrays.asList(), Arrays.asList(new WasmEventParameter(byte[].class) , new WasmEventParameter(byte[].class)));
@@ -101,41 +101,6 @@ public class AtomicSwap extends WasmContract {
         return executeRemoteCallTransaction(function, vonValue);
     }
 
-    public List<AddedEventResponse> getAddedEvents(TransactionReceipt transactionReceipt) {
-        List<WasmContract.WasmEventValuesWithLog> valueList = extractEventParametersWithLog(ADDED_EVENT, transactionReceipt);
-        ArrayList<AddedEventResponse> responses = new ArrayList<AddedEventResponse>(valueList.size());
-        for (WasmContract.WasmEventValuesWithLog eventValues : valueList) {
-            AddedEventResponse typedResponse = new AddedEventResponse();
-            typedResponse.log = eventValues.getLog();
-            typedResponse.arg1 = (byte[]) eventValues.getNonIndexedValues().get(0);
-            typedResponse.arg2 = (WasmAddress) eventValues.getNonIndexedValues().get(1);
-            typedResponse.arg3 = (Uint128) eventValues.getNonIndexedValues().get(2);
-            responses.add(typedResponse);
-        }
-        return responses;
-    }
-
-    public Observable<AddedEventResponse> addedEventObservable(PlatonFilter filter) {
-        return web3j.platonLogObservable(filter).map(new Func1<Log, AddedEventResponse>() {
-            @Override
-            public AddedEventResponse call(Log log) {
-                WasmContract.WasmEventValuesWithLog eventValues = extractEventParametersWithLog(ADDED_EVENT, log);
-                AddedEventResponse typedResponse = new AddedEventResponse();
-                typedResponse.log = log;
-                typedResponse.arg1 = (byte[]) eventValues.getNonIndexedValues().get(0);
-                typedResponse.arg2 = (WasmAddress) eventValues.getNonIndexedValues().get(1);
-                typedResponse.arg3 = (Uint128) eventValues.getNonIndexedValues().get(2);
-                return typedResponse;
-            }
-        });
-    }
-
-    public Observable<AddedEventResponse> addedEventObservable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
-        PlatonFilter filter = new PlatonFilter(startBlock, endBlock, getContractAddress());
-        filter.addSingleTopic(WasmEventEncoder.encode(ADDED_EVENT));
-        return addedEventObservable(filter);
-    }
-
     public List<InitiatedEventResponse> getInitiatedEvents(TransactionReceipt transactionReceipt) {
         List<WasmContract.WasmEventValuesWithLog> valueList = extractEventParametersWithLog(INITIATED_EVENT, transactionReceipt);
         ArrayList<InitiatedEventResponse> responses = new ArrayList<InitiatedEventResponse>(valueList.size());
@@ -175,6 +140,41 @@ public class AtomicSwap extends WasmContract {
         PlatonFilter filter = new PlatonFilter(startBlock, endBlock, getContractAddress());
         filter.addSingleTopic(WasmEventEncoder.encode(INITIATED_EVENT));
         return initiatedEventObservable(filter);
+    }
+
+    public List<AddedEventResponse> getAddedEvents(TransactionReceipt transactionReceipt) {
+        List<WasmContract.WasmEventValuesWithLog> valueList = extractEventParametersWithLog(ADDED_EVENT, transactionReceipt);
+        ArrayList<AddedEventResponse> responses = new ArrayList<AddedEventResponse>(valueList.size());
+        for (WasmContract.WasmEventValuesWithLog eventValues : valueList) {
+            AddedEventResponse typedResponse = new AddedEventResponse();
+            typedResponse.log = eventValues.getLog();
+            typedResponse.arg1 = (byte[]) eventValues.getNonIndexedValues().get(0);
+            typedResponse.arg2 = (WasmAddress) eventValues.getNonIndexedValues().get(1);
+            typedResponse.arg3 = (Uint128) eventValues.getNonIndexedValues().get(2);
+            responses.add(typedResponse);
+        }
+        return responses;
+    }
+
+    public Observable<AddedEventResponse> addedEventObservable(PlatonFilter filter) {
+        return web3j.platonLogObservable(filter).map(new Func1<Log, AddedEventResponse>() {
+            @Override
+            public AddedEventResponse call(Log log) {
+                WasmContract.WasmEventValuesWithLog eventValues = extractEventParametersWithLog(ADDED_EVENT, log);
+                AddedEventResponse typedResponse = new AddedEventResponse();
+                typedResponse.log = log;
+                typedResponse.arg1 = (byte[]) eventValues.getNonIndexedValues().get(0);
+                typedResponse.arg2 = (WasmAddress) eventValues.getNonIndexedValues().get(1);
+                typedResponse.arg3 = (Uint128) eventValues.getNonIndexedValues().get(2);
+                return typedResponse;
+            }
+        });
+    }
+
+    public Observable<AddedEventResponse> addedEventObservable(DefaultBlockParameter startBlock, DefaultBlockParameter endBlock) {
+        PlatonFilter filter = new PlatonFilter(startBlock, endBlock, getContractAddress());
+        filter.addSingleTopic(WasmEventEncoder.encode(ADDED_EVENT));
+        return addedEventObservable(filter);
     }
 
     public List<RedeemedEventResponse> getRedeemedEvents(TransactionReceipt transactionReceipt) {
@@ -309,16 +309,6 @@ public class AtomicSwap extends WasmContract {
         return new AtomicSwap(contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public static class AddedEventResponse {
-        public Log log;
-
-        public byte[] arg1;
-
-        public WasmAddress arg2;
-
-        public Uint128 arg3;
-    }
-
     public static class InitiatedEventResponse {
         public Log log;
 
@@ -333,6 +323,16 @@ public class AtomicSwap extends WasmContract {
         public Uint128 arg4;
 
         public Uint128 arg5;
+    }
+
+    public static class AddedEventResponse {
+        public Log log;
+
+        public byte[] arg1;
+
+        public WasmAddress arg2;
+
+        public Uint128 arg3;
     }
 
     public static class RedeemedEventResponse {

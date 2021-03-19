@@ -41,8 +41,6 @@ public class GasPrice extends WasmContract {
 
     public static String BINARY = BINARY_0;
 
-    public static final String FUNC_PLATONSHA3 = "platonSha3";
-
     public static final String FUNC_PLATONMIGRATE = "platonMigrate";
 
     public static final String FUNC_PLATONPANIC = "platonPanic";
@@ -51,9 +49,9 @@ public class GasPrice extends WasmContract {
 
     public static final String FUNC_PLATONECRECOVER = "platonEcrecover";
 
-    public static final String FUNC_PLATONRIPEMD160 = "platonRipemd160";
-
     public static final String FUNC_PLATONRLPU128SIZE = "platonRlpU128Size";
+
+    public static final String FUNC_PLATONRIPEMD160 = "platonRipemd160";
 
     public static final String FUNC_PLATONRLPBYTESSIZE = "platonRlpBytesSize";
 
@@ -84,6 +82,8 @@ public class GasPrice extends WasmContract {
     public static final String FUNC_PLATONCALLVALUE = "platonCallValue";
 
     public static final String FUNC_PLATONADDRESS = "platonAddress";
+
+    public static final String FUNC_PLATONSHA3 = "platonSha3";
 
     public static final String FUNC_PLATONCALLERNONCE = "platonCallerNonce";
 
@@ -140,16 +140,6 @@ public class GasPrice extends WasmContract {
 
     protected GasPrice(String contractAddress, Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
-    }
-
-    public RemoteCall<TransactionReceipt> platonSha3(byte[] src) {
-        final WasmFunction function = new WasmFunction(FUNC_PLATONSHA3, Arrays.asList(src, Void.class), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> platonSha3(byte[] src, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_PLATONSHA3, Arrays.asList(src, Void.class), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<TransactionReceipt> platonMigrate(WasmAddress contract_address) {
@@ -225,16 +215,6 @@ public class GasPrice extends WasmContract {
         return executeRemoteCallTransaction(function, vonValue);
     }
 
-    public RemoteCall<TransactionReceipt> platonRipemd160(byte[] src) {
-        final WasmFunction function = new WasmFunction(FUNC_PLATONRIPEMD160, Arrays.asList(src, Void.class), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> platonRipemd160(byte[] src, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_PLATONRIPEMD160, Arrays.asList(src, Void.class), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
-    }
-
     public RemoteCall<TransactionReceipt> platonRlpU128Size(Uint64 heigh, Uint64 low) {
         final WasmFunction function = new WasmFunction(FUNC_PLATONRLPU128SIZE, Arrays.asList(heigh,low), Void.class);
         return executeRemoteCallTransaction(function);
@@ -242,6 +222,16 @@ public class GasPrice extends WasmContract {
 
     public RemoteCall<TransactionReceipt> platonRlpU128Size(Uint64 heigh, Uint64 low, BigInteger vonValue) {
         final WasmFunction function = new WasmFunction(FUNC_PLATONRLPU128SIZE, Arrays.asList(heigh,low), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
+    }
+
+    public RemoteCall<TransactionReceipt> platonRipemd160(byte[] src) {
+        final WasmFunction function = new WasmFunction(FUNC_PLATONRIPEMD160, Arrays.asList(src, Void.class), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> platonRipemd160(byte[] src, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_PLATONRIPEMD160, Arrays.asList(src, Void.class), Void.class);
         return executeRemoteCallTransaction(function, vonValue);
     }
 
@@ -412,6 +402,16 @@ public class GasPrice extends WasmContract {
 
     public RemoteCall<TransactionReceipt> platonAddress(BigInteger vonValue) {
         final WasmFunction function = new WasmFunction(FUNC_PLATONADDRESS, Arrays.asList(), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
+    }
+
+    public RemoteCall<TransactionReceipt> platonSha3(byte[] src) {
+        final WasmFunction function = new WasmFunction(FUNC_PLATONSHA3, Arrays.asList(src, Void.class), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> platonSha3(byte[] src, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_PLATONSHA3, Arrays.asList(src, Void.class), Void.class);
         return executeRemoteCallTransaction(function, vonValue);
     }
 

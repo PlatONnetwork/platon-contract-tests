@@ -28,8 +28,6 @@ public class ReferenceDataTypeTupleContract extends WasmContract {
 
     public static String BINARY = BINARY_0;
 
-    public static final String FUNC_SETINITTUPLEMODETWO = "setInitTupleModeTwo";
-
     public static final String FUNC_SETINITTUPLEMODEONE = "setInitTupleModeOne";
 
     public static final String FUNC_GETTUPLEVALUEINDEX4 = "getTupleValueIndex4";
@@ -37,6 +35,8 @@ public class ReferenceDataTypeTupleContract extends WasmContract {
     public static final String FUNC_GETTUPLEVALUEINDEX1 = "getTupleValueIndex1";
 
     public static final String FUNC_GETTUPLEVALUEINDEX2 = "getTupleValueIndex2";
+
+    public static final String FUNC_SETINITTUPLEMODETWO = "setInitTupleModeTwo";
 
     public static final String FUNC_GETTUPLEVALUEINDEX3 = "getTupleValueIndex3";
 
@@ -48,16 +48,6 @@ public class ReferenceDataTypeTupleContract extends WasmContract {
 
     protected ReferenceDataTypeTupleContract(String contractAddress, Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
-    }
-
-    public RemoteCall<TransactionReceipt> setInitTupleModeTwo(String a, Uint8 b) {
-        final WasmFunction function = new WasmFunction(FUNC_SETINITTUPLEMODETWO, Arrays.asList(a,b), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> setInitTupleModeTwo(String a, Uint8 b, BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_SETINITTUPLEMODETWO, Arrays.asList(a,b), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public static RemoteCall<ReferenceDataTypeTupleContract> deploy(Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
@@ -103,6 +93,16 @@ public class ReferenceDataTypeTupleContract extends WasmContract {
     public RemoteCall<Uint8> getTupleValueIndex2() {
         final WasmFunction function = new WasmFunction(FUNC_GETTUPLEVALUEINDEX2, Arrays.asList(), Uint8.class);
         return executeRemoteCall(function, Uint8.class);
+    }
+
+    public RemoteCall<TransactionReceipt> setInitTupleModeTwo(String a, Uint8 b) {
+        final WasmFunction function = new WasmFunction(FUNC_SETINITTUPLEMODETWO, Arrays.asList(a,b), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> setInitTupleModeTwo(String a, Uint8 b, BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_SETINITTUPLEMODETWO, Arrays.asList(a,b), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public RemoteCall<String> getTupleValueIndex3() {
