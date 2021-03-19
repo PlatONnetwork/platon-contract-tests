@@ -17,7 +17,7 @@ import com.platon.tx.gas.GasProvider;
  * <p>Generated with web3j version 0.15.1.7.
  */
 public class ContractPayable extends Contract {
-    private static final String BINARY = "6080604052348015600f57600080fd5b50604e80601d6000396000f3fe608060405236600a57005b348015601557600080fd5b5000fea2646970667358221220ecf4ea50a27f37abff9364dab07effc2caddfa5529eee1923761fab5edeaca7264736f6c634300060c0033";
+    private static final String BINARY = "6080604052348015600f57600080fd5b50604e80601d6000396000f3fe608060405236600a57005b348015601557600080fd5b5000fea264697066735822122018b72d82543830f865bc42f4d17805c23cbc776729e8af3637a0988512121e6f64736f6c634300060c0033";
 
     protected ContractPayable(String contractAddress, Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
         super(BINARY, contractAddress, web3j, credentials, contractGasProvider);
