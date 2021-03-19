@@ -1,6 +1,7 @@
 package network.platon.test.wasm.beforetest;
 
 import com.platon.crypto.Credentials;
+import com.platon.parameters.NetworkParameters;
 import com.platon.protocol.Web3j;
 import com.platon.protocol.http.HttpService;
 import com.platon.tx.RawTransactionManager;
@@ -31,7 +32,9 @@ public class WASMContractPrepareTest extends BaseTest {
      */
     protected void prepare(String gasPrice,String gasLimit){
         chainId = Integer.valueOf(driverService.param.get("chainId"));
+        String hrp =  driverService.param.get("hrp");
         try {
+            NetworkParameters.init(chainId, hrp);
             web3j = Web3j.build(new HttpService(driverService.param.get("nodeUrl")));
             credentials = Credentials.create(driverService.param.get("privateKey"));
             collector.logStepPass("currentBlockNumber:" + web3j.platonBlockNumber().send().getBlockNumber());
