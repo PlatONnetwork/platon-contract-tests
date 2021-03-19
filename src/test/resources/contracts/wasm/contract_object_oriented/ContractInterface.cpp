@@ -1,4 +1,3 @@
-#define TESTNET
 // Created by 许文 on 2020-02-06.
 //
 

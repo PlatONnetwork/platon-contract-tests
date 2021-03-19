@@ -1,4 +1,3 @@
-#define TESTNET
 // Author: zjsunzone
 // 验证合约的继承、重载功能；
 #include <platon/platon.hpp>

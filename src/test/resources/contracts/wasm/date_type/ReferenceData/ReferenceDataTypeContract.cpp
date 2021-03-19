@@ -1,4 +1,3 @@
-#define TESTNET
 // Author: zjsunzone
 // Desc: 针对引用类型的相关测试
 #include <platon/platon.hpp>
