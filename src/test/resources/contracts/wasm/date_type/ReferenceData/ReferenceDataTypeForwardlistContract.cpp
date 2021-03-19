@@ -1,4 +1,3 @@
-#define TESTNET
 #include <platon/platon.hpp>
 #include <string>
 #include <forward_list>

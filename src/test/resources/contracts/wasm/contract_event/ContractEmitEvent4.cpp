@@ -1,5 +1,4 @@
-//#define TESTNET
-//#include <platon/platon.hpp>
+////#include <platon/platon.hpp>
 //#include <string>
 //using namespace platon;
 //

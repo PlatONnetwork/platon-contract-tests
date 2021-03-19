@@ -1,4 +1,3 @@
-#define TESTNET
 #undef NDEBUG
 // Author: zjsunzone
 // Desc: 验证所有基础数据类型的入参、返回值等是否合规
