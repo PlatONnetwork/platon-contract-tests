@@ -36,16 +36,6 @@ public class OOMException extends WasmContract {
         super(BINARY, contractAddress, web3j, transactionManager, contractGasProvider);
     }
 
-    public RemoteCall<TransactionReceipt> memory_limit() {
-        final WasmFunction function = new WasmFunction(FUNC_MEMORY_LIMIT, Arrays.asList(), Void.class);
-        return executeRemoteCallTransaction(function);
-    }
-
-    public RemoteCall<TransactionReceipt> memory_limit(BigInteger vonValue) {
-        final WasmFunction function = new WasmFunction(FUNC_MEMORY_LIMIT, Arrays.asList(), Void.class);
-        return executeRemoteCallTransaction(function, vonValue);
-    }
-
     public static RemoteCall<OOMException> deploy(Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
         String encodedConstructor = WasmFunctionEncoder.encodeConstructor(BINARY, Arrays.asList());
         return deployRemoteCall(OOMException.class, web3j, credentials, contractGasProvider, encodedConstructor);
@@ -64,6 +54,16 @@ public class OOMException extends WasmContract {
     public static RemoteCall<OOMException> deploy(Web3j web3j, TransactionManager transactionManager, GasProvider contractGasProvider, BigInteger initialVonValue) {
         String encodedConstructor = WasmFunctionEncoder.encodeConstructor(BINARY, Arrays.asList());
         return deployRemoteCall(OOMException.class, web3j, transactionManager, contractGasProvider, encodedConstructor, initialVonValue);
+    }
+
+    public RemoteCall<TransactionReceipt> memory_limit() {
+        final WasmFunction function = new WasmFunction(FUNC_MEMORY_LIMIT, Arrays.asList(), Void.class);
+        return executeRemoteCallTransaction(function);
+    }
+
+    public RemoteCall<TransactionReceipt> memory_limit(BigInteger vonValue) {
+        final WasmFunction function = new WasmFunction(FUNC_MEMORY_LIMIT, Arrays.asList(), Void.class);
+        return executeRemoteCallTransaction(function, vonValue);
     }
 
     public static OOMException load(String contractAddress, Web3j web3j, Credentials credentials, GasProvider contractGasProvider) {
