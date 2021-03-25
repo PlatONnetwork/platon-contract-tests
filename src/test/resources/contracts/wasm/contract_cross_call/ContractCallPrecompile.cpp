@@ -59,8 +59,7 @@ CONTRACT call_precompile : public platon::Contract {
 
                     platon::bytes  input = fromHex(in);
 
-//                    std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8stlfs";
-                    std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz5qpd94";
+                    std::string addr = "lat1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8stlfs";
 
                      auto address_info = make_address(addr);
                      if(address_info.second){

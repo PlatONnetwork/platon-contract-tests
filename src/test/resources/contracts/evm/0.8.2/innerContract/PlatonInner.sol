@@ -16,10 +16,6 @@ contract PlatonInner {
         bytes memory resval;
         assembly {
             let result := delegatecall(gas(), addr, add(data, 0x20), len, 0, 0)
-
-            if iszero(result) {
-                invalid()
-            }
             retsize := returndatasize()
         }
         resval = new bytes(retsize);
