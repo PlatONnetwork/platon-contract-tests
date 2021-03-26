@@ -14,8 +14,8 @@ CONTRACT delegate_call_ppos : public platon::Contract {
             platon::bytes  input = fromHex(in);
 
             auto address_info = make_address(target_addr);
-                if(address_info.second){
-                    if (platon_delegate_call(address_info.first, input, gas)) {
+            if(address_info.second){
+                if (platon_delegate_call(address_info.first, input, gas)) {
                     DEBUG("delegate call contract delegate_call_ppos_send success", "address", target_addr);
                     return 0;
                 }else{
@@ -23,8 +23,10 @@ CONTRACT delegate_call_ppos : public platon::Contract {
                     platon::get_call_output(error_info);
                     PLATON_EMIT_EVENT0(CallErrorInfo, error_info);
                 }
+            }else{
+                printf("error address:%s\t\n", target_addr.c_str());
             }
-
+            printf("hello");
             DEBUG("delegate call contract delegate_call_ppos_send fail", "address", target_addr);
             return 1;
         }

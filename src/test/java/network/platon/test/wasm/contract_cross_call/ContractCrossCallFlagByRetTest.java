@@ -51,7 +51,7 @@ public class ContractCrossCallFlagByRetTest extends WASMContractPrepareTest {
 
             // 检查下调用receiver 成功与否
             status = caller.get_status().send();
-            collector.assertEqual(status.getValue().longValue(), 0l);
+            collector.assertEqual(status.getValue().longValue(), 1l);
 
 
             // 直接给予 0gas, 就会使用默认的 剩余gas
