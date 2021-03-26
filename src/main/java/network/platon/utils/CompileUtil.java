@@ -52,7 +52,7 @@ public class CompileUtil {
 
     public void wasmCompile(String file, String buildPath) throws Exception {
         try {
-            String[] args = new String[]{"/bin/bash", "-c", "/usr/local/bin/platon-cpp" + " " + file + " " + "-o" + " " + buildPath};
+            String[] args = new String[]{"/bin/bash", "-c", "/usr/local/bin/platon-cpp" + " " + file + " " + "-o" + " " + buildPath + "-UNDEBUG"};
             execGenerate(args);
         } catch (Exception e) {
             e.printStackTrace();
