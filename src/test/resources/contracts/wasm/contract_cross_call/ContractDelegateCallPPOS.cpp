@@ -1,3 +1,4 @@
+#undef NDEBUG
 #include <platon/platon.hpp>
 #include <vector>
 #include <string>
@@ -23,6 +24,8 @@ CONTRACT delegate_call_ppos : public platon::Contract {
                     printf("return code");
                     platon::bytes error_info;
                     platon::get_call_output(error_info);
+                    auto func = [](uint8_t one){printf("%d\t\n", int(one));};
+                    std::for_each(error_info.begin(), error_info.end(), func);
                     PLATON_EMIT_EVENT0(CallErrorInfo, error_info);
                 }
             }else{
