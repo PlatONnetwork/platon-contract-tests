@@ -1,11 +1,12 @@
 #include <platon/platon.hpp>
 #include <vector>
 #include <string>
-#undef NDEBUG
 
 using namespace platon;
 
 CONTRACT call_ppos : public platon::Contract {
+    public:
+        PLATON_EVENT0(CallErrorInfo, const platon::bytes &);
     public:
         ACTION void init(){}
 
@@ -23,7 +24,12 @@ CONTRACT call_ppos : public platon::Contract {
                     platon_call(address_info.first, input, value, gas);
                     DEBUG("cross call contract cross_call_ppos_send success", "address", target_addr);
                     return 0;
-                }
+                }else{
+                     size_t len = ::platon_get_call_output_length();
+                     platon::bytes error_info(len);
+                     ::platon_get_call_output(error_info.data());
+                     PLATON_EMIT_EVENT0(CallErrorInfo, error_info);
+                 }
             }
             DEBUG("cross call contract cross_call_ppos_send fail", "address", target_addr);
             return 1;

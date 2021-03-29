@@ -70,7 +70,7 @@ public class ContractDelegateCallPPOSTest extends WASMContractPrepareTest {
 
 
             /**
-             *  查询 账户的锁仓计划
+         *  查询 账户的锁仓计划
              *
              *  account： 0xc9E1C2B330Cf7e759F2493c5C754b34d98B07f93
              *
@@ -125,14 +125,14 @@ public class ContractDelegateCallPPOSTest extends WASMContractPrepareTest {
              * blsPubKey: e5c3fcd6ce33c06aae22113977396c295728b8c01e0bc9188d2f3ffe52ea97b465639731f3cd4956a26e3e35f96e2a10646f28a352c6453be54dda05b703c31f0fbda3abc55a75151788338917f5a60b26f92bd15cdaf0dc00779a62056f3a00
              * blsProof: 46e9c92915ad2b423e9eea33482d2615f6a17a15a6fa3b99e3e83bc394700d14c7ace638b34be70e6903724ca217b3cf4ff85db6f38e83f06de95de2c0370916
              */
-            String createStakingInput = "0xf901b1838203e881809594d87e10f8efd2c32f5e88b7c279953aef6ee58902b842b840ced880d4769331f47af07a8d1b79de1e40c95a37ea1890bb9d3f0da8349e1a7c0ea4cadbb9c5bf185b051061eef8e5eadca251c24e1db1d9faf0fb24cbd06f9a93927873737373646464646666666667676767678d8c476176696e2c204368696e619a9968747470733a2f2f7777772e476176696e2e6e6574776f726b9190476176696e207375706572206e6f64658b8ad3c21bcecceda1000000838213888483010000b843b841a6b8f5e2de519991b567b7c9af9cdf6adb331be5c4b79d26ba0dcd1fb2fbab7a276a36944765997f4d18d6135b515d9de7cceb2d7af4338f4fedb6acdc050f8001b862b860e5c3fcd6ce33c06aae22113977396c295728b8c01e0bc9188d2f3ffe52ea97b465639731f3cd4956a26e3e35f96e2a10646f28a352c6453be54dda05b703c31f0fbda3abc55a75151788338917f5a60b26f92bd15cdaf0dc00779a62056f3a00b842b84046e9c92915ad2b423e9eea33482d2615f6a17a15a6fa3b99e3e83bc394700d14c7ace638b34be70e6903724ca217b3cf4ff85db6f38e83f06de95de2c0370916";
+            String createStakingInput = "0xf90189838203e881809594189daff2c1fac1328ed4b50bd0c869a336b54f0cb842b84035bb5daad814fe902030cba6fd2d3ec60906dab70ba5df4d42a19448d300ab203cfd892c325f6716965dd93d8de2a377a2806c9703b69b68287577c70f9e7c078c8b65787465726e616c5f69648a896e6f64655f6e616d65888777656273697465888764657461696c738c8b0422ca8b0a00a425000000838203e801b843b841b6319abd8e3c6c245642143581b8d5a56ef940e85a204a74048712e0707f97502352c6921d24a15d8d442cec56c1a7881eaf4ee5a4ee221f433defd0241dbba400b862b860add743cdbb0f9ae2bd5fd4faf36a70d7ca52d00f0912bc915bd1b6c8a6a93914c7fbf35bb00b7d4dd47ba1bb6c37f9089ac02558ca4bca697e2a091e618af0dc82254358ff55e7a161109d17a05ea6d1fe7481864640227b4f4b3c3f2606660eb842b8405ed22680c6d85daa2abae0bdd24845971e6d8ca645ee9a93b06258ac845b2316fb680c7a02f0cad2a1559545936cf349a363cc21300c2f9ed0ea1aab691ae14c";
 
             TransactionReceipt createStakingReceipt =  ppos.delegate_call_ppos_send(stakingContractAddr, createStakingInput, Uint64.of(60000000l)).send();
 
             String  createStakingDataHex = createStakingReceipt.getLogs().get(0).getData();
             String createStakingDataStr = DataChangeUtil.decodeSystemContractRlp(createStakingDataHex);
             ContractCrossCallPPOSTest.pposResult res = gson.fromJson(createStakingDataStr, ContractCrossCallPPOSTest.pposResult.class);
-            int createStakingExpectData = 301005;
+            int createStakingExpectData = 301003;
 
             collector.logStepPass("delegate_call_ppos createStaking successfully txHash:" + createStakingReceipt.getTransactionHash());
             collector.assertEqual(res.Code, createStakingExpectData);
@@ -312,7 +312,7 @@ public class ContractDelegateCallPPOSTest extends WASMContractPrepareTest {
     @Test
     @DataSource(type = DataSourceType.EXCEL, file = "test.xls", sheetName = "Sheet1",
             author = "xujiacan", showName = "wasm.contract_delegate_call_ppos_DelegateReward",sourcePrefix = "wasm")
-    public void testDelegateCallPPOS4DelegateReward() {
+    public void     testDelegateCallPPOS4DelegateReward() {
         try {
 
             prepare();
