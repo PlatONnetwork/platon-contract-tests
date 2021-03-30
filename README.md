@@ -1,4 +1,4 @@
-# 使用手冊
+# 使用手册
 
 ​		合约自动化测试代码是一个基于`client.java.sdk`并通过`maven`来管理的工程。因此使用时只需要配置`maven`，并通过`maven client compile` 就可以生成一个`java project`并导入`IDE`，然后就可以开始愉快的编写合约测试
 
