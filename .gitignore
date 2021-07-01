@@ -13,3 +13,4 @@ scripts/platon-web3j
 autotest_log
 logs
 *.abi.json
+report.zip
