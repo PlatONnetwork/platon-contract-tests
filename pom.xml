@@ -13,9 +13,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.alaya.sdk</groupId>
+            <groupId>com.platon.sdk</groupId>
             <artifactId>core</artifactId>
-            <version>0.16.0.0</version>
+            <version>1.3.0.1</version>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
